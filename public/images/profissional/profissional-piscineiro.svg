@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100" role="img" aria-label="Foto do profissional da Med's Piscinas">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B3B44"/><stop offset="1" stop-color="#2E8FA3"/></linearGradient></defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="792" cy="154" r="63" fill="#D9A441" opacity="0.85"/>
+  <path d="M0,770 C225,638 450,880 675,748 C810,682 855,704 900,682 L900,1100 L0,1100 Z" fill="#E7DCC8" opacity="0.14"/>
+  <path d="M0,682 C180,550 360,792 540,660 C720,550 810,605 900,572 L900,1100 L0,1100 Z" fill="#6BB7C4" opacity="0.22"/>
+  <text x="50%" y="462" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="41" font-weight="600" fill="#F7F3EA">Foto do profissional da Med's Piscinas</text>
+  <text x="50%" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#D8C7A7">Foto real em breve</text>
+  <text x="50%" y="551" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#FFFFFF" opacity="0.4">Substituir por foto real em /public/images/</text>
+</svg>

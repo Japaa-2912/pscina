@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* =====================================================================
+   TEMA — Med's Piscinas
+   Água + Areia + Sol + Limpeza + Profissionalismo
+   ===================================================================== */
+@theme {
+  /* Azul profundo / petróleo */
+  --color-deep: #0b3b44;
+  --color-deep-800: #104955;
+  --color-deep-700: #175a66;
+
+  /* Azul água */
+  --color-water: #2e8fa3;
+  --color-water-deep: #1f7084;
+  --color-water-light: #6bb7c4;
+  --color-water-50: #eaf6f8;
+
+  /* Tons de areia / bege claro */
+  --color-sand: #d8c7a7;
+  --color-sand-light: #e7dcc8;
+  --color-cream: #f7f3ea;
+  --color-cream-dark: #efe7d8;
+
+  /* Dourado / amarelo solar */
+  --color-sun: #d9a441;
+  --color-sun-dark: #b8862e;
+
+  /* Texto e apoio */
+  --color-ink: #16272b;
+  --color-muted: #5d7177;
+
+  /* Verde WhatsApp (tons mais escuros para contraste AA) */
+  --color-wa: #1c8a4d;
+  --color-wa-dark: #15693b;
+
+  /* Tipografia */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  ::selection {
+    background-color: var(--color-water-light);
+    color: var(--color-deep);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-sun);
+    outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Animação de revelação ao rolar (ativa quando o elemento entra na tela)
+   --------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respeita usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
