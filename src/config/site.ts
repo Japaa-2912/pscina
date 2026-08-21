@@ -75,14 +75,17 @@ export const site = {
    *  (ou no arquivo de dados correspondente).
    * ====================================================================== */
   images: {
-    /** Logo/marca. Já existe um SVG de marca próprio em /public/images/logo/logo-mark.svg */
-    logo: "/images/logo/logo-mark.svg",
-    /** Foto do hero (primeira dobra). Placeholder: hero-piscina.svg */
-    hero: "/images/hero/hero-piscina.svg",
-    /** Foto do profissional (seção Sobre). Placeholder: profissional-piscineiro.svg */
-    profissional: "/images/profissional/profissional-piscineiro.svg",
-    /** Imagem de compartilhamento (Open Graph). 1200x630. Placeholder gerado. */
-    og: "/images/og-image.svg",
+    /** Logo/marca. Foto real da empresa em /public/images/logo/logo.jpg */
+    logo: "/images/logo/logo.jpg",
+    /** Foto do hero (primeira dobra). Foto de piscina (Pexels, licença livre). */
+    hero: "/images/hero/hero-piscina.jpg",
+    /** Foto do profissional trabalhando (seção Sobre). Fotos reais da empresa. */
+    profissional: "/images/profissional/profissional-1.jpg",
+    profissionalAlt: "/images/profissional/profissional-2.jpg",
+    /** Foto de fundo do CTA intermediário. Foto de piscina (Pexels, licença livre). */
+    cta: "/images/cta/cta-piscina.jpg",
+    /** Imagem de compartilhamento (Open Graph). 1200x630, gerada com a logo real. */
+    og: "/images/og-image.jpg",
   },
 
   /* ========================================================================

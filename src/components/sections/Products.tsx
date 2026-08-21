@@ -25,7 +25,7 @@ export function Products() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <span className="absolute left-4 top-4 rounded-full bg-sun px-3 py-1 text-xs font-semibold text-deep">
+                <span className="absolute left-4 top-4 rounded-full bg-sand-deep px-3 py-1 text-xs font-semibold text-white">
                   {product.tag}
                 </span>
               </div>

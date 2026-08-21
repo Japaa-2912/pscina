@@ -41,15 +41,15 @@ export function ServiceArea() {
 
   return (
     <Section id="atendimento" className="bg-white">
-      <div className="overflow-hidden rounded-3xl bg-deep shadow-[0_24px_60px_rgba(11,59,68,0.25)]">
+      <div className="overflow-hidden rounded-3xl bg-deep shadow-[0_24px_60px_rgba(10,52,60,0.25)]">
         <div className="grid lg:grid-cols-2">
           <div className="p-8 sm:p-12">
             <SectionHeading
               align="left"
               light
               eyebrow="Área de Atendimento"
-              title="Tem uma piscina precisando de cuidados?"
-              description="Atendimento para clientes da região. Consulte a disponibilidade para o seu endereço."
+              title="Atendimento na sua região"
+              description="Precisa de um profissional para cuidar da sua piscina? Consulte nossa área de atendimento."
             />
 
             <div className="mt-8">
@@ -70,23 +70,23 @@ export function ServiceArea() {
                   }}
                   placeholder="Digite sua cidade ou região"
                   autoComplete="off"
-                  className="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3.5 text-white placeholder:text-white/50 backdrop-blur-sm focus:border-sun focus:outline-none"
+                  className="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3.5 text-white placeholder:text-white/50 backdrop-blur-sm focus:border-sand-deep focus:outline-none"
                 />
                 <button
                   type="button"
                   onClick={checkArea}
-                  className="shrink-0 rounded-full bg-sun px-7 py-3.5 font-semibold text-deep transition-colors hover:bg-sun-dark"
+                  className="shrink-0 rounded-full bg-sand-deep px-7 py-3.5 font-semibold text-deep transition-colors hover:bg-sand-dark"
                 >
-                  Ver atendimento
+                  Verificar atendimento
                 </button>
               </div>
 
               <div className="mt-5 min-h-[4.5rem] space-y-2 text-sm leading-relaxed">
                 {result === "match" && (
                   <p className="text-sand-light">
-                    <span className="font-semibold text-sun">✓</span> Ótimo!{" "}
-                    {value} está na nossa área de atendimento. Fale com a gente
-                    pelo WhatsApp para agendar.
+                    <span className="font-semibold text-sand-deep">✓</span>{" "}
+                    Ótimo! {value} está na nossa área de atendimento. Fale com a
+                    gente pelo WhatsApp para agendar.
                   </p>
                 )}
                 {result === "unknown" && (
@@ -114,7 +114,7 @@ export function ServiceArea() {
               href={waServiceLink("regiao")}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sand-light transition-colors hover:text-sand"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sand-light transition-colors hover:text-white"
             >
               <WhatsAppIcon className="h-4 w-4" />
               Confirmar atendimento pelo WhatsApp
@@ -123,7 +123,7 @@ export function ServiceArea() {
 
           <div className="relative flex min-h-[280px] items-center justify-center bg-gradient-to-br from-water/25 via-deep to-deep p-8 lg:min-h-0">
             <div className="text-center">
-              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sun/20 text-sun">
+              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sand-deep/20 text-sand-light">
                 <MapPinIcon className="h-8 w-8" />
               </span>
               <p className="mt-4 font-display text-xl font-semibold text-white">

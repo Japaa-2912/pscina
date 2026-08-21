@@ -13,8 +13,9 @@ export interface Product {
 /**
  * Produtos oferecidos pela empresa.
  * NÃO foram inventadas marcas ou preços — apenas categorias de produtos
- * mencionadas no briefing. As imagens são placeholders; troque o caminho
- * `image` quando tiver as fotos reais em /public/images/produtos/.
+ * mencionadas no briefing. As imagens são de água/piscina (Pexels, licença
+ * livre); troque o caminho `image` quando tiver as fotos reais em
+ * /public/images/produtos/.
  */
 export const products: Product[] = [
   {
@@ -23,8 +24,8 @@ export const products: Product[] = [
     description:
       "Cloro para tratamento e desinfecção da água, mantendo a piscina limpa e própria para uso.",
     tag: "Tratamento",
-    image: "/images/produtos/produto-cloro.svg",
-    alt: "Cloro para tratamento de piscina",
+    image: "/images/produtos/produto-cloro.jpg",
+    alt: "Água de piscina tratada com cloro, em tom azul vibrante",
     messageKey: "produtos",
   },
   {
@@ -33,8 +34,8 @@ export const products: Product[] = [
     description:
       "Itens para correção de pH, algicidas e demais produtos para manter a qualidade da água da piscina.",
     tag: "Tratamento",
-    image: "/images/produtos/produto-tratamento.svg",
-    alt: "Produtos para tratamento da água da piscina",
+    image: "/images/produtos/produto-tratamento.jpg",
+    alt: "Água de piscina cristalina com reflexos",
     messageKey: "produtos",
   },
   {
@@ -43,8 +44,8 @@ export const products: Product[] = [
     description:
       "Produtos para limpeza e conservação da piscina, como desengordurantes e limpadores de bordas.",
     tag: "Limpeza",
-    image: "/images/produtos/produto-limpeza.svg",
-    alt: "Produtos de limpeza para piscina",
+    image: "/images/produtos/produto-limpeza.jpg",
+    alt: "Piscina limpa com marcas de pista na água",
     messageKey: "produtos",
   },
 ];

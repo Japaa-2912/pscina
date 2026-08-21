@@ -25,16 +25,16 @@ function svg({ label, w, h, sublabel = "Foto real em breve", note = "Substituir 
   const wave1 = `M0,${Math.round(h * 0.62)} C${Math.round(w * 0.2)},${Math.round(h * 0.5)} ${Math.round(w * 0.4)},${Math.round(h * 0.72)} ${Math.round(w * 0.6)},${Math.round(h * 0.6)} C${Math.round(w * 0.8)},${Math.round(h * 0.5)} ${Math.round(w * 0.9)},${Math.round(h * 0.55)} ${w},${Math.round(h * 0.52)} L${w},${h} L0,${h} Z`;
   const wave2 = `M0,${Math.round(h * 0.7)} C${Math.round(w * 0.25)},${Math.round(h * 0.58)} ${Math.round(w * 0.5)},${Math.round(h * 0.8)} ${Math.round(w * 0.75)},${Math.round(h * 0.68)} C${Math.round(w * 0.9)},${Math.round(h * 0.62)} ${Math.round(w * 0.95)},${Math.round(h * 0.64)} ${w},${Math.round(h * 0.62)} L${w},${h} L0,${h} Z`;
 
-  const bg = `<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B3B44"/><stop offset="1" stop-color="#2E8FA3"/></linearGradient>`;
+  const bg = `<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A343C"/><stop offset="1" stop-color="#3FA8BC"/></linearGradient>`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}">
   <defs>${bg}</defs>
   <rect width="${w}" height="${h}" fill="url(#bg)"/>
-  <circle cx="${cx}" cy="${cy}" r="${sunR}" fill="#D9A441" opacity="0.85"/>
-  <path d="${wave2}" fill="#E7DCC8" opacity="0.14"/>
-  <path d="${wave1}" fill="#6BB7C4" opacity="0.22"/>
-  <text x="50%" y="${Math.round(h * 0.42)}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${fs}" font-weight="600" fill="#F7F3EA">${label}</text>
-  <text x="50%" y="${Math.round(h * 0.42 + fs * 1.35)}" text-anchor="middle" font-family="Arial, sans-serif" font-size="${subFs}" fill="#D8C7A7">${sublabel}</text>
+  <circle cx="${cx}" cy="${cy}" r="${sunR}" fill="#C2AE8A" opacity="0.85"/>
+  <path d="${wave2}" fill="#E6D9C0" opacity="0.14"/>
+  <path d="${wave1}" fill="#8FD0DB" opacity="0.22"/>
+  <text x="50%" y="${Math.round(h * 0.42)}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${fs}" font-weight="600" fill="#F8F4EA">${label}</text>
+  <text x="50%" y="${Math.round(h * 0.42 + fs * 1.35)}" text-anchor="middle" font-family="Arial, sans-serif" font-size="${subFs}" fill="#E6D9C0">${sublabel}</text>
   <text x="50%" y="${Math.round(h * 0.42 + fs * 1.35 + subFs * 1.6)}" text-anchor="middle" font-family="Arial, sans-serif" font-size="${noteFs}" fill="#FFFFFF" opacity="0.4">${note}</text>
 </svg>
 `;

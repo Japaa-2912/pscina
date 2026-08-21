@@ -1,92 +1,79 @@
 import { site } from "../../config/site";
 import { waServiceLink } from "../../lib/whatsapp";
 import { Button } from "../ui/Button";
-import { Container } from "../ui/Container";
-import { Reveal } from "../ui/Reveal";
 import { CheckIcon, WhatsAppIcon } from "../ui/icons";
 
 const trustItems = [
   "Limpeza profissional",
-  "Manutenção de piscinas",
-  "Troca de areia do filtro",
-  "Produtos para tratamento",
+  "Manutenção",
+  "Tratamento da água",
+  "Troca de areia",
 ];
 
 export function Hero() {
   return (
-    <section
-      id="inicio"
-      className="relative flex min-h-[92svh] items-center overflow-hidden bg-deep"
-    >
+    <section id="inicio" className="relative isolate overflow-hidden">
       <img
         src={site.images.hero}
-        alt="Piscina residencial limpa e cristalina"
+        alt="Piscina com água cristalina, limpa e pronta para uso"
         className="absolute inset-0 h-full w-full object-cover"
         loading="eager"
         fetchPriority="high"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-deep/90 via-deep/70 to-deep/25"
+        className="absolute inset-0 bg-gradient-to-r from-deep via-deep/80 to-deep/35"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-deep/90 to-transparent"
       />
 
-      <Container className="relative py-24 sm:py-28">
-        <Reveal>
-          <p className="inline-flex items-center gap-2 rounded-full border border-sand/40 bg-deep/40 px-4 py-2 text-xs font-semibold tracking-wide text-sand-light backdrop-blur-sm">
-            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-sun" />
-            Limpeza · Manutenção · Tratamento da água · Produtos
+      <div className="relative mx-auto flex min-h-[78svh] w-full max-w-6xl flex-col justify-center px-5 py-24 sm:px-8 sm:py-28">
+        <div className="max-w-2xl">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-sand-light backdrop-blur-sm">
+            Limpeza · Manutenção · Tratamento da água
           </p>
-        </Reveal>
 
-        <Reveal delay={80}>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.08] text-balance text-white sm:text-5xl lg:text-6xl">
-            Piscina limpa, cuidada e pronta para aproveitar.
+          <h1 className="mt-6 font-display text-4xl font-medium leading-[1.1] text-balance text-white sm:text-5xl lg:text-6xl">
+            Sua piscina limpa, cuidada e pronta para aproveitar.
           </h1>
-        </Reveal>
 
-        <Reveal delay={160}>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85">
-            Limpeza, manutenção e tratamento profissional para manter sua piscina
-            sempre em perfeito estado.
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+            Limpeza, manutenção e tratamento profissional para manter sua
+            piscina sempre em perfeitas condições.
           </p>
-        </Reveal>
 
-        <Reveal delay={240}>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button
               href={waServiceLink("orcamento")}
-              variant="whatsapp"
-              className="px-8 py-4 text-base"
+              variant="accent"
+              className="py-4 sm:px-8"
             >
-              <WhatsAppIcon className="h-5 w-5" />
               Solicitar orçamento
             </Button>
             <Button
               href={waServiceLink("geral")}
-              variant="light"
-              className="px-8 py-4 text-base"
+              variant="whatsapp"
+              className="py-4 sm:px-8"
             >
-              Falar no WhatsApp
+              <WhatsAppIcon className="h-5 w-5" />
+              Falar pelo WhatsApp
             </Button>
           </div>
-        </Reveal>
 
-        <Reveal delay={320}>
-          <ul className="mt-12 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
+          <ul className="mt-12 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2">
             {trustItems.map((item) => (
-              <li
-                key={item}
-                className="flex items-center gap-2.5 text-sm font-medium text-white/90"
-              >
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sun/25 text-sun">
-                  <CheckIcon className="h-3.5 w-3.5" />
+              <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-white/95">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sand/20">
+                  <CheckIcon className="h-3.5 w-3.5 text-sand-light" />
                 </span>
                 {item}
               </li>
             ))}
           </ul>
-        </Reveal>
-      </Container>
+        </div>
+      </div>
     </section>
   );
 }

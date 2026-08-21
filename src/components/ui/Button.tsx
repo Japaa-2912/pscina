@@ -19,7 +19,7 @@ export type ButtonProps = ButtonAsButton | ButtonAsAnchor;
 
 const variants: Record<Variant, string> = {
   primary: "bg-deep text-cream hover:bg-deep-800 shadow-sm",
-  accent: "bg-sun text-deep hover:bg-sun-dark shadow-sm",
+  accent: "bg-sand-deep text-deep hover:bg-sand-dark shadow-sm",
   whatsapp: "bg-wa text-white hover:bg-wa-dark shadow-sm",
   outline: "border border-deep/25 text-deep hover:border-deep hover:bg-deep/5",
   light: "border border-white/35 text-white hover:bg-white/10 backdrop-blur-sm",

@@ -1,23 +1,22 @@
 import { site } from "../../config/site";
-import { services } from "../../data/services";
 import { waServiceLink } from "../../lib/whatsapp";
 import { ClockIcon, InstagramIcon, MapPinIcon, WhatsAppIcon } from "../ui/icons";
 
 const navLinks = [
   { href: "#inicio", label: "Início" },
-  { href: "#servicos", label: "Serviços" },
   { href: "#sobre", label: "Sobre" },
+  { href: "#servicos", label: "Serviços" },
   { href: "#galeria", label: "Galeria" },
-  { href: "#atendimento", label: "Área de Atendimento" },
   { href: "#contato", label: "Contato" },
 ];
 
 export function Footer() {
   const hasAddress = Boolean(site.street || site.city || site.state);
   const hasHours = Boolean(site.openingHours);
+  const regionLabel = [site.region, site.city, site.state].filter(Boolean).join(" · ");
 
   return (
-    <footer id="contato" className="bg-deep pb-20 text-white/70 md:pb-0">
+    <footer className="bg-deep pb-20 text-white/70 md:pb-0">
       <div className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Marca */}
@@ -26,9 +25,9 @@ export function Footer() {
               <img
                 src={site.images.logo}
                 alt={`Logotipo ${site.businessName}`}
-                width={44}
-                height={44}
-                className="h-11 w-11 shrink-0"
+                width={96}
+                height={96}
+                className="h-12 w-12 shrink-0 rounded-lg object-cover"
               />
               <p className="font-display text-xl font-semibold text-white">
                 Med&apos;s Piscinas
@@ -38,15 +37,12 @@ export function Footer() {
               Limpeza, manutenção e tratamento profissional de piscinas, com
               cuidado e atenção em cada detalhe.
             </p>
-            <a
-              href={site.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-sand-light transition-colors hover:text-sand"
-            >
-              <InstagramIcon className="h-4 w-4" />
-              {site.instagramHandle}
-            </a>
+            {regionLabel && (
+              <p className="mt-5 flex items-center gap-2 text-sm font-medium text-sand-light">
+                <MapPinIcon className="h-4 w-4 shrink-0" />
+                Atendemos: {regionLabel}
+              </p>
+            )}
           </div>
 
           {/* Navegação */}
@@ -68,25 +64,6 @@ export function Footer() {
             </ul>
           </nav>
 
-          {/* Serviços */}
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sand">
-              Serviços
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              {services.map((service) => (
-                <li key={service.id}>
-                  <a
-                    href="#servicos"
-                    className="text-sm transition-colors hover:text-white"
-                  >
-                    {service.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contato */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sand">
@@ -98,7 +75,7 @@ export function Footer() {
                   href={waServiceLink("geral")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 text-sm transition-colors hover:text-white"
+                  className="inline-flex items-center gap-2.5 text-sm font-medium text-white transition-colors hover:text-sand-light"
                 >
                   <WhatsAppIcon className="h-4 w-4 shrink-0 text-sand-light" />
                   {site.whatsappDisplay}
@@ -115,6 +92,10 @@ export function Footer() {
                   {site.instagramHandle}
                 </a>
               </li>
+              <li className="flex items-start gap-2.5 text-sm">
+                <ClockIcon className="mt-0.5 h-4 w-4 shrink-0 text-sand-light" />
+                <span>{hasHours ? site.openingHours : "Horário em breve"}</span>
+              </li>
               {hasAddress && (
                 <li className="flex items-start gap-2.5 text-sm">
                   <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-sand-light" />
@@ -124,24 +105,34 @@ export function Footer() {
                   </span>
                 </li>
               )}
-              {hasHours && (
-                <li className="flex items-start gap-2.5 text-sm">
-                  <ClockIcon className="mt-0.5 h-4 w-4 shrink-0 text-sand-light" />
-                  <span>{site.openingHours}</span>
-                </li>
-              )}
-              {!hasAddress && !hasHours && (
-                <li className="text-sm leading-relaxed">
-                  Endereço e horários de atendimento serão publicados em breve.
-                </li>
-              )}
             </ul>
+          </div>
+
+          {/* Atendimento */}
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sand">
+              Área de atendimento
+            </p>
+            <p className="mt-4 text-sm leading-relaxed">
+              {site.serviceAreas.length > 0
+                ? site.serviceAreas.join(" · ")
+                : "Consulte nossa área de atendimento pelo WhatsApp."}
+            </p>
+            <a
+              href={waServiceLink("regiao")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-sand-light transition-colors hover:text-white"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              Confirmar atendimento na sua região
+            </a>
           </div>
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-center text-xs text-white/50">
-            © 2026 {site.businessName}. Todos os direitos reservados.
+            © 2026 {site.businessName} — Todos os direitos reservados.
           </p>
         </div>
       </div>

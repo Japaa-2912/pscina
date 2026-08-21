@@ -11,85 +11,82 @@ export interface Service {
 }
 
 /**
- * Serviços oferecidos pela Med's Piscinas.
- * As imagens apontam para placeholders SVG. Para usar uma foto real:
- *  1. Salve a foto em /public/images/servicos/
- *  2. Atualize o caminho `image` abaixo (ex: "/images/servicos/servico-limpeza.jpg")
+ * Serviços oferecidos pela Med's Piscinas (confirmados no briefing).
+ * As imagens apontam para fotos de piscina (Pexels, licença livre) — para
+ * usar uma foto real, salve em /public/images/servicos/ e atualize `image`.
  */
 export const services: Service[] = [
   {
     id: "limpeza",
     title: "Limpeza de Piscinas",
-    description:
-      "Aspiração, escovação, peneiração, limpeza das bordas e manutenção geral.",
+    description: "Limpeza completa da piscina e manutenção da água.",
     features: [
       "Aspiração do fundo",
       "Escovação de paredes e bordas",
       "Peneiração da superfície",
       "Limpeza da linha d'água",
     ],
-    image: "/images/servicos/servico-limpeza.svg",
-    alt: "Profissional realizando limpeza de piscina residencial",
+    image: "/images/galeria/galeria-1.jpg",
+    alt: "Piscina com água limpa e azulejos em bom estado",
     messageKey: "limpeza",
   },
   {
     id: "manutencao",
     title: "Manutenção de Piscinas",
-    description:
-      "Manutenção preventiva, verificação dos equipamentos e cuidados gerais com a piscina.",
+    description: "Cuidados periódicos para manter a piscina em boas condições.",
     features: [
       "Manutenção preventiva",
       "Verificação dos equipamentos",
       "Rotina adequada de cuidados",
       "Acompanhamento periódico",
     ],
-    image: "/images/servicos/servico-manutencao.svg",
-    alt: "Técnico verificando o funcionamento da piscina durante manutenção",
+    image: "/images/galeria/galeria-7.jpg",
+    alt: "Piscina bem cuidada em área de lazer",
     messageKey: "manutencao",
   },
   {
     id: "tratamento-agua",
     title: "Tratamento da Água",
     description:
-      "Controle e tratamento da água utilizando os produtos adequados para manter a piscina limpa e bem cuidada.",
+      "Controle e tratamento adequado da água utilizando os produtos necessários.",
     features: [
       "Controle da qualidade da água",
       "Uso dos produtos adequados",
       "Equilíbrio do pH",
       "Água limpa e bem cuidada",
     ],
-    image: "/images/servicos/servico-tratamento-agua.svg",
-    alt: "Profissional analisando a água da piscina durante o tratamento",
+    image: "/images/galeria/galeria-3.jpg",
+    alt: "Água de piscina cristalina com reflexos de luz",
     messageKey: "tratamento",
   },
   {
     id: "troca-areia",
     title: "Troca de Areia do Filtro",
     description:
-      "Troca da areia do sistema de filtragem para recuperar a eficiência da filtragem.",
+      "Substituição da areia do filtro para manter uma boa eficiência de filtragem.",
     features: [
       "Troca da areia do filtro",
       "Verificação do sistema de filtragem",
       "Recuperação da eficiência da filtragem",
       "Água mais limpa e transparente",
     ],
-    image: "/images/servicos/servico-troca-areia.svg",
-    alt: "Profissional realizando troca de areia do filtro da piscina",
+    image: "/images/galeria/galeria-5.jpg",
+    alt: "Piscina em área de lazer com água tratada",
     messageKey: "trocaAreia",
   },
   {
     id: "produtos",
     title: "Produtos para Piscina",
     description:
-      "Venda de produtos para manutenção e tratamento da piscina, incluindo cloro e outros produtos disponíveis pela empresa.",
+      "Venda de produtos para manutenção e tratamento da piscina, incluindo cloro e outros produtos disponíveis.",
     features: [
       "Cloro e produtos de tratamento",
       "Produtos para manutenção",
       "Orientação de uso",
       "Disponibilidade consultada pelo WhatsApp",
     ],
-    image: "/images/servicos/servico-produtos.svg",
-    alt: "Produtos para tratamento e manutenção de piscina",
+    image: "/images/produtos/produto-cloro.jpg",
+    alt: "Água de piscina em tom azul vibrante",
     messageKey: "produtos",
   },
   {
@@ -103,8 +100,8 @@ export const services: Service[] = [
       "Identificação de problemas",
       "Serviço confirmado pela empresa",
     ],
-    image: "/images/servicos/servico-equipamentos.svg",
-    alt: "Verificação de equipamentos da casa de máquinas da piscina",
+    image: "/images/galeria/galeria-8.jpg",
+    alt: "Piscina de borda infinita com água cristalina",
     messageKey: "equipamentos",
   },
 ];

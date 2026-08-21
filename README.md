@@ -1,182 +1,170 @@
+
 # Med's Piscinas — Site institucional
 
-Site profissional, moderno e responsivo para a **Med's Piscinas**, empresa de
-limpeza, manutenção e tratamento de piscinas. Desenvolvido com **React +
-TypeScript + Tailwind CSS** (Vite), 100% estático, otimizado para SEO local e
-conversão via WhatsApp.
+Site comercial profissional da **Med's Piscinas** — limpeza, manutenção e
+tratamento de piscinas — com foco em **conversão pelo WhatsApp** e **SEO local**.
+
+Desenvolvido com **React + TypeScript + Tailwind CSS** (Vite 7). 100% estático,
+pronto para hospedagem na Vercel/Netlify/GitHub Pages.
 
 ## ✨ O que o site entrega
 
-- Página única (landing) com as 13 seções: Hero, Serviços, Antes e depois,
-  Sobre, Como funciona, Galeria, Área de atendimento, Produtos, Feed do
-  Instagram, Depoimentos, FAQ, CTA final e Footer.
-- Botão flutuante de WhatsApp + barra inferior no mobile (WhatsApp · Orçamento ·
-  Instagram).
-- Mensagens de WhatsApp pré-preenchidas e diferentes por serviço.
-- SEO local: título e meta description, Open Graph, dados estruturados
-  Schema.org (`LocalBusiness` + `Service`), `sitemap.xml`, `robots.txt`,
-  headings semânticos e URLs amigáveis.
-- Identidade visual inspirada em **água + areia + sol + profissionalismo**
-  (azul profundo, azul água, areia, bege e dourado solar), sem visual de
+- Estrutura comercial completa: **Hero → Benefícios → Serviços → Como trabalhamos →
+  Sobre → Por que escolher → Galeria → Antes e depois → Produtos → Área de
+  atendimento → CTA → Instagram → Depoimentos → FAQ → Contato → Rodapé**.
+- **Barra de topo** com horário de atendimento e WhatsApp + header com menu e
+  botão **"Solicitar orçamento"**.
+- **WhatsApp em tudo**: botão flutuante (desktop), barra fixa no mobile
+  (WhatsApp · Orçamento · Instagram), e CTAs com mensagem pré-preenchida e
+  específica por serviço.
+- **Formulário de orçamento** (Nome, Telefone, Serviço, Cidade/região, Mensagem)
+  que monta a solicitação e envia direto para o WhatsApp da empresa.
+- **SEO local**: title, meta description, Open Graph, Twitter Card, dados
+  estruturados Schema.org (`LocalBusiness` + `Service` + `GeoCircle`),
+  `sitemap.xml`, `robots.txt`, headings semânticos e alt text descritivos.
+- Identidade visual **água cristalina + areia + sol + limpeza** (azul profundo,
+  azul água, tons de areia, bege e detalhes mínimos em dourado), sem cara de
   template genérico.
-- Mobile-first, animações leves, acessibilidade (WCAG AA, foco visível,
-  `prefers-reduced-motion`) e performance (imagens otimizadas e lazy loading).
+- **Fontes self-hosted** (`@fontsource-variable/inter` e `fraunces`) — sem
+  requisição externa ao Google Fonts, primeira pintura instantânea.
+- Mobile-first, animações discretas (reveal ao rolar, hover, transições), foco
+  visível e suporte a `prefers-reduced-motion`.
+
+## 🎨 Paleta (tema em `src/index.css`)
+
+| Token | Cor | Uso |
+| --- | --- | --- |
+| `deep` | `#0A343C` | Azul profundo/petróleo — fundos, rodapé |
+| `water` / `water-light` | `#3FA8BC` / `#8FD0DB` | Azul água cristalina |
+| `sand` / `sand-light` | `#E6D9C0` / `#F0E8D6` | Tons de areia (fundos, chips) |
+| `sand-deep` / `sand-dark` | `#C2AE8A` / `#A89370` | Areia úmida — acentos e botões |
+| `cream` / `cream-dark` | `#F8F4EA` / `#EFE8D8` | Bege quente de fundo |
+| `wa` / `wa-dark` | `#1C8A4D` / `#15693B` | Verde WhatsApp (CTAs) |
 
 ## 📁 Estrutura do projeto
 
 ```
 public/
-├─ favicon.svg                 # ícone do site (marca da empresa)
-├─ robots.txt                  # TROQUE_AQUI: domínio real
-├─ sitemap.xml                 # TROQUE_AQUI: domínio real
-└─ images/                     # todas as imagens do site
-   ├─ logo/logo-mark.svg       # marca/logo (SVG próprio — pode substituir)
-   ├─ hero/                    # foto da primeira dobra
-   ├─ profissional/            # foto do profissional (seção Sobre)
-   ├─ servicos/                # 6 imagens dos serviços
-   ├─ produtos/                # 3 imagens dos produtos
-   ├─ galeria/                 # 8 imagens da galeria (formatos variados)
-   ├─ antes-depois/            # pares antes/depois
-   └─ og-image.svg             # imagem de compartilhamento (trocar por .jpg 1200x630)
+├─ favicon.png                # gerado a partir de img/simbulo.jpg (símbolo)
+├─ robots.txt / sitemap.xml   # TROQUE_AQUI: domínio real
+└─ images/
+   ├─ logo/logo.jpg           # ★ logo real (imagem + nome da empresa)
+   ├─ hero/hero-piscina.jpg   # foto de piscina (Pexels, licença livre)
+   ├─ cta/cta-piscina.jpg     # foto do CTA intermediário (Pexels)
+   ├─ profissional/           # ★ fotos reais do profissional trabalhando
+   ├─ galeria/                # 8 fotos Pexels + 2 fotos reais da empresa
+   ├─ produtos/               # fotos de água/piscina (Pexels)
+   └─ antes-depois/           # placeholders SVG (substituir pelas fotos reais)
 
+img/                          # fotos originais fornecidas pela empresa (fonte)
 src/
-├─ config/site.ts              # ★ TODOS os dados da empresa (editável)
-├─ data/                       # conteúdos editáveis (serviços, produtos,
-│  │                          #   galeria, antes/depois, FAQ, depoimentos)
-├─ lib/whatsapp.ts             # links do WhatsApp com mensagens pré-preenchidas
-├─ components/
-│  ├─ ui/                      # botões, containers, seções, animações, ícones
-│  ├─ layout/                  # header, menu mobile, footer, WhatsApp flutuante, barra mobile
-│  └─ sections/                # as seções da página
-├─ App.tsx
-└─ main.tsx
+├─ config/site.ts             # ★ TODOS os dados da empresa (editável)
+├─ data/                      # services, products, gallery, benefits, whyUs,
+│  │                          #   howItWorks, beforeAfter, faqs, testimonials
+├─ lib/whatsapp.ts            # links WhatsApp com mensagens pré-preenchidas
+└─ components/
+   ├─ ui/                     # Button, Container, Section, Reveal, SectionHeading, icons
+   ├─ layout/                 # Header (com barra de topo), Footer, WhatsAppFloat, MobileBottomBar
+   └─ sections/               # Hero, Benefits, Services, HowItWorks, About, WhyUs,
+                               #   Gallery, BeforeAfter, Products, ServiceArea, CTA,
+                               #   InstagramFeed, Testimonials, Faq, Contact
 ```
 
-## 🚀 Como executar localmente
+## 🚀 Como executar
 
 Pré-requisitos: **Node.js 18+** e **npm**.
 
 ```bash
-# 1. instalar dependências
-npm install
-
-# 2. ambiente de desenvolvimento (http://localhost:5173)
-npm run dev
-
-# 3. gerar/regenerar as imagens placeholder (opcional)
-npm run placeholders
-
-# 4. build de produção (gera a pasta /dist)
-npm run build
-
-# 5. pré-visualizar o build (http://localhost:4173)
-npm run preview
+npm install            # instala as dependências
+npm run dev            # ambiente de desenvolvimento (http://localhost:5173)
+npm run build          # build de produção (gera /dist)
+npm run preview        # pré-visualiza o build (http://localhost:4173)
+npm run placeholders   # regenera imagens placeholder (antes/depois)
+npm run typecheck      # checagem de tipos
 ```
 
-Deploy estático: envie a pasta `dist/` para a **Vercel**, **Netlify** ou
-qualquer hospedagem estática (há um `vercel.json` pronto com cache otimizado).
+> **Importante:** para medir a velocidade real, use `npm run build` + `npm run
+> preview`. O `npm run dev` tem "cold start" no Windows (transforma módulos sob
+> demanda) — isso não acontece no site publicado.
+
+Deploy: envie a pasta `dist/` para a **Vercel** (ou Netlify). Há um
+`vercel.json` pronto com cache de imagens.
 
 ## ✏️ Onde editar cada informação
 
-Tudo está centralizado. Em **95% dos casos basta editar `src/config/site.ts`**:
+**95% dos casos = `src/config/site.ts`:**
 
-| O que alterar | Onde |
+| O que alterar | Campo |
 | --- | --- |
-| Nome/razão social | `site.businessName` |
-| Número do WhatsApp | `site.whatsappNumber` (com 55 + DDD, só dígitos) e `site.whatsappDisplay` |
-| Instagram | `site.instagramUrl` e `site.instagramHandle` |
-| Domínio do site | `site.siteUrl` |
-| Cidade / região / UF / endereço / CEP | `site.city`, `site.region`, `site.state`, `site.street`, `site.zip` |
-| Cidades atendidas (campo "Ver atendimento") | `site.serviceAreas` |
-| Coordenadas e raio (SEO local) | `site.geo` e `site.geoRadius` |
-| Horário de atendimento | `site.openingHours` |
-| Foto do hero | `site.images.hero` |
-| Foto do profissional | `site.images.profissional` |
-| Logotipo | `site.images.logo` (+ arquivo em `public/images/logo/`) |
-| Feed do Instagram ao vivo | `site.instagramFeed` |
+| Nome da empresa | `businessName` |
+| WhatsApp | `whatsappNumber` (55 + DDD, só dígitos) e `whatsappDisplay` |
+| Instagram | `instagramUrl` e `instagramHandle` |
+| Domínio do site | `siteUrl` |
+| Cidade / região / UF / endereço / CEP | `city`, `region`, `state`, `street`, `zip` |
+| Cidades atendidas | `serviceAreas` (alimenta o campo "Verificar atendimento") |
+| Coordenadas / raio (SEO local) | `geo` e `geoRadius` |
+| Horário de atendimento | `openingHours` |
+| Imagens | `images` (logo, hero, profissional, cta, og) |
+| Feed do Instagram ao vivo | `instagramFeed` (Lightwidget ou Graph API) |
 
-### Conteúdos por seção (arquivos em `src/data/`)
+**Conteúdos por seção (`src/data/`):**
+- `services.ts` — 6 serviços (limpeza, manutenção, tratamento da água, troca de
+  areia, produtos, equipamentos) com mensagem própria de WhatsApp.
+- `products.ts` — cloro, tratamento e limpeza (sem marcas/preços inventados).
+- `gallery.ts` — mosaico editorial (use `span` para controlar o tamanho das fotos).
+- `benefits.ts`, `whyUs.ts`, `howItWorks.ts` — faixas, diferenciais e etapas.
+- `beforeAfter.ts` — comparativos antes/depois (SVG ilustrativos marcados).
+- `faqs.ts`, `testimonials.ts` — FAQ e depoimentos (depoimentos começam vazios).
 
-- **Serviços**: `services.ts` — títulos, descrições e mensagens de WhatsApp.
-- **Produtos**: `products.ts` — apenas categorias (marcas/preços ficam sob consulta).
-- **Galeria**: `gallery.ts` — itens e categorias.
-- **Antes e depois**: `beforeAfter.ts` — pares de fotos (seção some se o array estiver vazio).
-- **FAQ**: `faqs.ts` — perguntas e respostas.
-- **Depoimentos**: `testimonials.ts` — começa vazio (nada foi inventado); a seção
-  mostra um aviso honesto até existirem depoimentos reais.
+## 🖼️ Imagens
 
-## 🖼️ Substituindo as fotos (importante)
+A estrutura já usa fotos reais da empresa e fotos livres do Pexels:
 
-As fotos atuais são **placeholders SVG** criados com a paleta do site
-(azul profundo + água + areia + sol) e marcados com a frase
-*"Substituir por foto real"*.
+- **`img/logo.jpg`** → `public/images/logo/logo.jpg` (header/footer) e
+  **`img/simbulo.jpg`** → `favicon.png` + `og-image.jpg` (Open Graph 1200×630).
+- **`img/foto profissional do mesmo*.jpg`** → seção **Sobre** e galeria.
+- **Hero / CTA / galeria / produtos** → fotos de piscina do Pexels (licença
+  livre, sem atribuição obrigatória).
 
-Para usar uma foto real:
+Para trocar por fotos suas: salve em `public/images/<pasta>/` e atualize o
+caminho em `src/config/site.ts` (imagens principais) ou nos arquivos de
+`src/data/` (galeria/produtos/antes-depois).
 
-1. Salve o arquivo em `public/images/<pasta>/` com um nome claro
-   (ex.: `hero-piscina.jpg`, `profissional-piscineiro.jpg`).
-2. Atualize o caminho no arquivo correspondente (em `site.images` ou nos
-   arquivos de `src/data/`).
-3. Rode `npm run build` para gerar o novo `dist/`.
+## 📸 Feed do Instagram ao vivo (opcional)
 
-Sugestão de fotos: piscina cristalina (hero), profissional realizando limpeza,
-aspiração, análise da água, troca de areia do filtro, casa de máquinas,
-produtos e fotos de antes/depois.
+A seção **"Acompanhe nosso trabalho"** mostra as fotos do perfil
+**@medspiscinas** atualizando automaticamente. Ative em `src/config/site.ts`:
 
-## 📸 Feed do Instagram ao vivo
+- **Lightwidget** (recomendado, funciona em site estático):
+  1. Crie conta em https://lightwidget.com e gere o widget do perfil.
+  2. Copie o ID (a parte `widgets/XXXX.html`) e configure
+     `instagramFeed.enabled = true`, `method: "lightwidget"`, `widgetId: "XXXX"`.
+- **Instagram Graph API** (requer backend): configure `method: "graph"` +
+  `accessToken` e adicione uma serverless function que retorne as mídias.
 
-A seção "Acompanhe nosso trabalho" pode exibir as fotos do perfil
-**@medspiscinas** atualizando automaticamente, sem precisar manter as fotos
-no site. Duas opções:
-
-### Opção A — Lightwidget (recomendada, funciona em site estático)
-
-1. Crie uma conta gratuita em https://lightwidget.com.
-2. Adicione o perfil `@medspiscinas` e gere o widget (configure para
-   sincronizar sozinho).
-3. Copie o **ID** do widget (a parte `widgets/XXXX.html` do código gerado).
-4. Em `src/config/site.ts`, ative:
-
-```ts
-instagramFeed: {
-  enabled: true,
-  method: "lightwidget",
-  widgetId: "SEU_ID_AQUI", // substitua
-  accessToken: "",
-},
-```
-
-5. Rode `npm run build` e publique. Pronto: as fotos do Instagram aparecem e
-   atualizam sozinhas na página.
-
-### Opção B — Instagram Graph API (nativa, requer backend)
-
-1. Vincule a conta do Instagram a uma página do Facebook (Conta Profissional).
-2. Crie um app no Facebook Developers e gere um token de acesso de longa duração.
-3. Ative em `site.instagramFeed` com `method: "graph"` e `accessToken`.
-4. Adicione uma função serverless na Vercel/Netlify (ex.: `/api/instagram.ts`)
-   que busque as mídias do perfil e retorne um JSON; o componente já está
-   preparado para receber essa estrutura.
+Enquanto o widget não estiver pronto, a seção exibe um convite para seguir o
+perfil.
 
 ## 🔎 SEO local
 
 - Meta tags, canonical, Open Graph e Twitter Card são injetados a partir de
   `src/config/site.ts` (veja `vite.config.ts`).
 - JSON-LD com `LocalBusiness`, `Service`, `OfferCatalog`, `ContactPoint` e
-  `areaServed` (GeoCircle) são gerados automaticamente.
-- `public/sitemap.xml` e `public/robots.txt` apontam para o domínio
+  `areaServed` (GeoCircle) gerados automaticamente.
+- `public/sitemap.xml` e `public/robots.txt` apontam para
   `https://TROQUE_AQUI.com.br` — **substitua pelo domínio real** após o deploy.
-- Palavras-chave ("piscineiro", "limpeza de piscina", "manutenção de piscina",
-  "troca de areia do filtro", "tratamento de piscina", "produtos para piscina")
-  aparecem de forma natural em títulos, textos, alts e dados estruturados.
+- Quando a cidade/região for preenchida, o conteúdo já está pronto para
+  pesquisas como "piscineiro [cidade]", "limpeza de piscina [cidade]",
+  "troca de areia de filtro de piscina" etc., sem keyword stuffing.
 
 ## 🧑‍💻 Stack
 
 - **Vite 7** + **React 19** + **TypeScript**
 - **Tailwind CSS v4** (tema customizado em `src/index.css`)
+- **Fontes self-hosted**: `@fontsource-variable/inter` + `@fontsource-variable/fraunces`
 - Animações leves com IntersectionObserver (`components/ui/Reveal.tsx`)
 - Ícones SVG próprios (sem biblioteca externa)
-- Sem dependências pesadas — bundle inicial de ~74 KB (gzip)
+- Bundle inicial de ~75 KB (gzip), sem requisições externas de CSS/fontes
 
 ---
-© 2026 Med's Piscinas. Todos os direitos reservados.
+© 2026 Med's Piscinas — Todos os direitos reservados.

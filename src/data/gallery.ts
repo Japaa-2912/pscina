@@ -1,92 +1,87 @@
-export type GalleryCategory =
-  | "limpeza"
-  | "manutencao"
-  | "troca-de-areia"
-  | "produtos"
-  | "antes-depois";
-
 export interface GalleryItem {
   id: string;
   src: string;
   alt: string;
-  category: GalleryCategory;
   title: string;
+  /** Classes extras de posição no mosaico (grid 4 colunas no desktop). */
+  span: string;
 }
 
-export const galleryCategories: {
-  id: GalleryCategory | "todos";
-  label: string;
-}[] = [
-  { id: "todos", label: "Todos" },
-  { id: "limpeza", label: "Limpeza" },
-  { id: "manutencao", label: "Manutenção" },
-  { id: "troca-de-areia", label: "Troca de areia" },
-  { id: "produtos", label: "Produtos" },
-  { id: "antes-depois", label: "Antes e depois" },
-];
-
 /**
- * Galeria de trabalhos realizados.
- * As imagens apontam para placeholders SVG com proporções variadas
- * (formato editorial). Para usar as fotos reais do Instagram:
- *  1. Salve cada foto em /public/images/galeria/
- *  2. Atualize o caminho `src` abaixo
+ * Galeria de trabalhos (mosaico editorial).
+ * 8 fotos de piscinas (Pexels, licença livre) + 2 fotos reais do
+ * profissional da Med's Piscinas. Para usar mais fotos reais, salve em
+ * /public/images/galeria/ e atualize `src` abaixo.
  */
 export const gallery: GalleryItem[] = [
   {
     id: "g1",
-    src: "/images/galeria/galeria-limpeza-1.svg",
-    alt: "Profissional fazendo a limpeza da borda da piscina",
-    category: "limpeza",
-    title: "Limpeza de bordas e linha d'água",
+    src: "/images/galeria/galeria-1.jpg",
+    alt: "Piscina com água limpa e azulejos em bom estado",
+    title: "Piscina limpa e pronta para uso",
+    span: "md:col-span-2 md:row-span-2",
   },
   {
     id: "g2",
-    src: "/images/galeria/galeria-limpeza-2.svg",
-    alt: "Piscina residencial com água cristalina após a limpeza",
-    category: "limpeza",
-    title: "Piscina limpa e pronta para uso",
+    src: "/images/profissional/profissional-2.jpg",
+    alt: "Profissional da Med's Piscinas em atendimento",
+    title: "Atendimento em campo",
+    span: "",
   },
   {
     id: "g3",
-    src: "/images/galeria/galeria-manutencao-1.svg",
-    alt: "Técnico verificando equipamentos da piscina",
-    category: "manutencao",
-    title: "Verificação de equipamentos",
+    src: "/images/galeria/galeria-4.jpg",
+    alt: "Piscina com água azul sob o céu aberto",
+    title: "Piscina residencial",
+    span: "",
   },
   {
     id: "g4",
-    src: "/images/galeria/galeria-manutencao-2.svg",
-    alt: "Casa de máquinas da piscina durante a manutenção",
-    category: "manutencao",
-    title: "Casa de máquinas",
+    src: "/images/galeria/galeria-6.jpg",
+    alt: "Piscina cercada por vegetação",
+    title: "Piscina integrada ao lazer",
+    span: "",
   },
   {
     id: "g5",
-    src: "/images/galeria/galeria-troca-areia-1.svg",
-    alt: "Profissional realizando a troca de areia do filtro da piscina",
-    category: "troca-de-areia",
-    title: "Troca de areia do filtro",
+    src: "/images/galeria/galeria-7.jpg",
+    alt: "Área de lazer com piscina bem cuidada",
+    title: "Área de lazer",
+    span: "",
   },
   {
     id: "g6",
-    src: "/images/galeria/galeria-troca-areia-2.svg",
-    alt: "Filtro de areia da piscina em manutenção",
-    category: "troca-de-areia",
-    title: "Manutenção do filtro",
+    src: "/images/galeria/galeria-3.jpg",
+    alt: "Água de piscina cristalina com reflexos de luz",
+    title: "Água cristalina",
+    span: "md:col-span-2 md:row-span-2",
   },
   {
     id: "g7",
-    src: "/images/galeria/galeria-produtos-1.svg",
-    alt: "Produtos para tratamento da água da piscina",
-    category: "produtos",
-    title: "Produtos para a piscina",
+    src: "/images/profissional/profissional-1.jpg",
+    alt: "Profissional da Med's Piscinas realizando o serviço",
+    title: "Serviço realizado com cuidado",
+    span: "",
   },
   {
     id: "g8",
-    src: "/images/galeria/galeria-antes-depois-1.svg",
-    alt: "Comparativo da piscina antes e depois da manutenção profissional",
-    category: "antes-depois",
-    title: "Resultado da manutenção",
+    src: "/images/galeria/galeria-8.jpg",
+    alt: "Piscina de borda infinita com água cristalina",
+    title: "Piscina de borda infinita",
+    span: "",
+  },
+  {
+    id: "g9",
+    src: "/images/galeria/galeria-5.jpg",
+    alt: "Piscina em área de lazer com água tratada",
+    title: "Água tratada e equilibrada",
+    span: "",
+  },
+  {
+    id: "g10",
+    src: "/images/galeria/galeria-2.jpg",
+    alt: "Borda de piscina com escada e água azul",
+    title: "Detalhes que fazem diferença",
+    span: "",
   },
 ];

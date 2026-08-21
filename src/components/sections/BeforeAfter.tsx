@@ -15,7 +15,7 @@ export function BeforeAfter() {
       <SectionHeading
         light
         eyebrow="Antes e depois"
-        title="Veja a diferença de uma manutenção profissional"
+        title="Veja a diferença"
         description="Arraste o controle sobre a imagem para comparar. As fotos exibidas são ilustrativas e serão substituídas pelos trabalhos reais da empresa."
       />
 
@@ -29,7 +29,7 @@ export function BeforeAfter() {
                   {pair.title}
                 </p>
                 {pair.note && (
-                  <span className="rounded-full border border-sun/40 px-3 py-1 text-[11px] font-medium tracking-wide text-sand-light">
+                  <span className="rounded-full border border-sand-deep/40 px-3 py-1 text-[11px] font-medium tracking-wide text-sand-light">
                     FOTO ILUSTRATIVA
                   </span>
                 )}

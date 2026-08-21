@@ -23,9 +23,9 @@ export function SectionHeading({
             light ? "text-sand" : "text-water-deep"
           } ${align === "center" ? "justify-center" : ""}`}
         >
-          <span aria-hidden="true" className="h-px w-8 bg-sun" />
+          <span aria-hidden="true" className="h-px w-8 bg-sand-deep" />
           {eyebrow}
-          {align === "center" && <span aria-hidden="true" className="h-px w-8 bg-sun" />}
+          {align === "center" && <span aria-hidden="true" className="h-px w-8 bg-sand-deep" />}
         </p>
       )}
       <h2

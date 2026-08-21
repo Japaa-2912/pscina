@@ -38,7 +38,7 @@ export function InstagramFeed() {
           </div>
         ) : (
           <div className="rounded-3xl border border-dashed border-deep/20 bg-cream/60 px-6 py-12 text-center">
-            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sun/15 text-sun-dark">
+            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sand-deep/15 text-sand-dark">
               <InstagramIcon className="h-7 w-7" />
             </span>
             <p className="mx-auto mt-5 max-w-md font-display text-xl font-medium text-deep">

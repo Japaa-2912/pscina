@@ -1,30 +1,36 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/fraunces/wght-italic.css";
 @import "tailwindcss";
 
 /* =====================================================================
    TEMA — Med's Piscinas
-   Água + Areia + Sol + Limpeza + Profissionalismo
+   Água cristalina + Areia + Sol + Limpeza + Profissionalismo
    ===================================================================== */
 @theme {
   /* Azul profundo / petróleo */
-  --color-deep: #0b3b44;
-  --color-deep-800: #104955;
-  --color-deep-700: #175a66;
+  --color-deep: #0a343c;
+  --color-deep-800: #0f4550;
+  --color-deep-700: #145664;
 
-  /* Azul água */
-  --color-water: #2e8fa3;
-  --color-water-deep: #1f7084;
-  --color-water-light: #6bb7c4;
-  --color-water-50: #eaf6f8;
+  /* Azul água cristalina */
+  --color-water: #3fa8bc;
+  --color-water-deep: #1e7e93;
+  --color-water-light: #8fd0db;
+  --color-water-50: #e7f6f9;
 
-  /* Tons de areia / bege claro */
-  --color-sand: #d8c7a7;
-  --color-sand-light: #e7dcc8;
-  --color-cream: #f7f3ea;
-  --color-cream-dark: #efe7d8;
+  /* Tons de areia (areia de praia, não dourado) */
+  --color-sand: #e6d9c0;
+  --color-sand-light: #f0e8d6;
+  --color-sand-deep: #c2ae8a;
+  --color-sand-dark: #a89370;
 
-  /* Dourado / amarelo solar */
-  --color-sun: #d9a441;
-  --color-sun-dark: #b8862e;
+  /* Bege quente */
+  --color-cream: #f8f4ea;
+  --color-cream-dark: #efe8d8;
+
+  /* Detalhe dourado mínimo (sol da marca) — usado com moderação */
+  --color-gold: #b98a2f;
 
   /* Texto e apoio */
   --color-ink: #16272b;
@@ -50,7 +56,13 @@
   }
 
   section[id] {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 7.5rem;
+  }
+
+  @media (min-width: 40rem) {
+    section[id] {
+      scroll-margin-top: 8.5rem;
+    }
   }
 
   ::selection {
@@ -59,7 +71,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-sun);
+    outline: 2px solid var(--color-water-deep);
     outline-offset: 2px;
   }
 }
