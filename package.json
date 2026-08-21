@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "placeholders": "node scripts/generate-placeholders.mjs",
+    "copy:beforeafter": "node scripts/copy-beforeafter.mjs",
     "typecheck": "tsc -b --force"
   },
   "dependencies": {

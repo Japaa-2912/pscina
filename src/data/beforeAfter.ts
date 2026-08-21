@@ -10,11 +10,13 @@ export interface BeforeAfterPair {
 
 /**
  * Comparativos "antes e depois".
- * As imagens são placeholders para demonstrar o funcionamento do slider.
- * Para usar fotos reais do Instagram:
- *  1. Salve as fotos em /public/images/antes-depois/
- *  2. Atualize os caminhos `before` e `after` abaixo
- *  3. Se ainda não houver material, deixe o array vazio (a seção é ocultada)
+ * Coloque as fotos na pasta /img/ com os nomes abaixo e rode:
+ *   npm run copy:beforeafter
+ * (o script copia de /img/ para /public/images/antes-depois/)
+ *   - antes-1.jpg  / depois-1.jpg
+ *   - antes-2.jpg  / depois-2.jpg
+ * Se não houver fotos suficientes, remova o par correspondente deste array
+ * (a seção some automaticamente quando o array fica vazio).
  */
 export const beforeAfter: BeforeAfterPair[] = [
   {
@@ -24,7 +26,6 @@ export const beforeAfter: BeforeAfterPair[] = [
     after: "/images/antes-depois/depois-1.jpg",
     altBefore: "Piscina com água verde antes da manutenção profissional",
     altAfter: "Piscina com água cristalina depois da manutenção profissional",
-    note: "Foto ilustrativa — substituir pelas fotos reais.",
   },
   {
     id: "ba2",
@@ -33,6 +34,5 @@ export const beforeAfter: BeforeAfterPair[] = [
     after: "/images/antes-depois/depois-2.jpg",
     altBefore: "Água turva antes da troca de areia do filtro",
     altAfter: "Água cristalina depois da troca de areia do filtro",
-    note: "Foto ilustrativa — substituir pelas fotos reais.",
   },
 ];
