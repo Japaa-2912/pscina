@@ -45,27 +45,34 @@ export const site = {
    *  atendidas. Isso alimenta o SEO local, o Schema.org e a seção
    *  "Área de Atendimento" do site.
    * ====================================================================== */
-  city: "", // TROQUE_AQUI: cidade base (ex: "São Paulo")
-  region: "", // TROQUE_AQUI: região de atendimento (ex: "Grande São Paulo")
-  state: "", // TROQUE_AQUI: UF (ex: "SP")
+  city: "Barueri",
+  region: "Oeste da Grande São Paulo",
+  state: "SP",
   street: "", // TROQUE_AQUI: endereço (ex: "Av. Exemplo, 123")
-  zip: "", // TROQUE_AQUI: CEP
+  zip: "06400-000", // CEP de Barueri (TROQUE_AQUI se tiver CEP específico)
 
   /** Lista de cidades/regiões atendidas (usada no campo "Ver atendimento"). */
   serviceAreas: [
-    // TROQUE_AQUI: ex: "São Paulo", "Guarulhos", "Osasco", "Santo André"...
+    "Barueri",
+    "Alphaville",
+    "Tamboré",
+    "Santana de Parnaíba",
+    "Carapicuíba",
+    "Osasco",
+    "Cotia",
+    "Jandira",
   ] as string[],
 
   /** Coordenadas aproximadas da região (usadas no Schema.org -> GeoCircle). */
   geo: {
-    latitude: -23.5505, // TROQUE_AQUI: latitude da cidade base
-    longitude: -46.6333, // TROQUE_AQUI: longitude da cidade base
+    latitude: -23.5067, // Barueri
+    longitude: -46.8774,
   },
   /** Raio de atendimento em metros (padrão ~20 km). */
   geoRadius: 20000,
 
   /** Horário de atendimento (exibido no rodapé e no Schema.org). */
-  openingHours: "", // TROQUE_AQUI: ex "Seg a Sáb, 08h às 18h"
+  openingHours: "Seg a Sáb, das 8h às 18h", // TROQUE_AQUI: ajuste ao horário real
 
   /* ========================================================================
    *  IMAGENS
