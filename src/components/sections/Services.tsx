@@ -1,56 +1,48 @@
-import { services } from "../../data/services";
+import { services, servicesNote } from "../../data/services";
 import { waServiceLink } from "../../lib/whatsapp";
+import { ArrowRightIcon } from "../ui/icons";
+import { Reveal } from "../ui/Reveal";
 import { Section } from "../ui/Section";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Reveal } from "../ui/Reveal";
-import { ArrowRightIcon } from "../ui/icons";
 
 export function Services() {
   return (
-    <Section id="servicos" className="bg-cream">
+    <Section id="servicos" className="bg-white">
       <SectionHeading
-        eyebrow="Nossos serviços"
-        title="Soluções completas para sua piscina"
-        description="Da limpeza ao tratamento da água, cuidamos dos principais detalhes para que sua piscina esteja sempre pronta para aproveitar."
+        eyebrow="Serviços"
+        title="O que fazemos pela sua piscina"
+        description="Do tratamento da água à manutenção do dia a dia — uma lista direta do que cuidamos para você."
       />
 
-      <div className="mt-12 grid gap-6 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto mt-12 max-w-3xl border-t border-deep/10 sm:mt-14">
         {services.map((service, index) => (
-          <Reveal key={service.id} delay={index * 60}>
-            <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-deep/5 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(10,52,60,0.25)]">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-deep/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                />
-              </div>
-              <div className="flex flex-1 flex-col p-6 sm:p-7">
-                <h3 className="font-display text-xl font-semibold text-deep sm:text-[1.35rem]">
+          <Reveal key={service.id} delay={index * 40}>
+            <div className="flex flex-col gap-3 border-b border-deep/10 py-6 sm:flex-row sm:items-start sm:justify-between sm:gap-10">
+              <div>
+                <h3 className="font-display text-xl text-deep sm:text-[1.35rem]">
                   {service.title}
                 </h3>
-                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted sm:text-[0.95rem]">
+                <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted">
                   {service.description}
                 </p>
-                <a
-                  href={waServiceLink(service.messageKey)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-water-deep transition-colors hover:text-deep"
-                >
-                  Solicitar
-                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </a>
               </div>
-            </article>
+              <a
+                href={waServiceLink(service.messageKey)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-water-deep transition-colors hover:text-deep"
+              >
+                Solicitar
+                <ArrowRightIcon className="h-4 w-4" />
+              </a>
+            </div>
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mx-auto mt-8 max-w-3xl">
+        <p className="text-sm leading-relaxed text-muted">{servicesNote}</p>
+      </Reveal>
     </Section>
   );
 }

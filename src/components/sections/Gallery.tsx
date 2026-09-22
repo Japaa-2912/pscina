@@ -33,10 +33,10 @@ export function Gallery() {
             />
             <span
               aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-t from-deep/75 via-deep/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className="absolute inset-0 bg-deep/45 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
             <span className="absolute inset-x-0 bottom-0 flex translate-y-2 items-center justify-between gap-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-              <span className="text-sm font-medium text-white">{item.title}</span>
+              <span className="text-sm font-normal text-white">{item.title}</span>
               <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                 Ampliar
               </span>

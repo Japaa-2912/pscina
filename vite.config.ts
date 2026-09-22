@@ -10,8 +10,8 @@ const esc = (s: string) =>
  *  partir da configuração central (src/config/site.ts). */
 function seoPlugin() {
   const url = site.siteUrl.replace(/\/$/, "");
-  const title = `${site.businessName} | Limpeza, manutenção e tratamento de piscinas`;
-  const description = `Limpeza, manutenção e tratamento profissional de piscinas, troca de areia do filtro e produtos para o cuidado da água. Atendimento rápido pelo WhatsApp ${site.whatsappDisplay}.`;
+  const title = `${site.businessName} | Cuidado de piscinas com Arquimedes`;
+  const description = `Cuidado profissional de piscinas com Arquimedes: tratamento químico, manutenção preventiva, troca de areia e acompanhamento da água na Zona Sul e Zona Oeste de São Paulo. Atendimento pelo WhatsApp ${site.whatsappDisplay}.`;
 
   const localBusiness: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -24,6 +24,7 @@ function seoPlugin() {
     priceRange: "$$",
     description,
     sameAs: [site.instagramUrl],
+    founder: { "@type": "Person", name: "Arquimedes" },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -72,11 +73,12 @@ function seoPlugin() {
       "@type": "OfferCatalog",
       name: "Serviços de piscina",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Limpeza de piscinas" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Manutenção de piscinas" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Tratamento da água" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Tratamento químico da água" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Manutenção preventiva" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Troca de areia do filtro" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Produtos para piscina" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cuidados gerais" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Venda de produtos para piscina" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Avaliação e acompanhamento da água" } },
       ],
     },
   };

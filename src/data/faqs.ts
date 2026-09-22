@@ -10,7 +10,7 @@ export interface Faq {
  * As respostas NÃO afirmam serviços que a empresa não oferece.
  * Edite livremente conforme a empresa confirmar novas informações.
  */
-const region = site.region ? `na região de ${site.region}` : "na sua região";
+const region = site.region ? `na ${site.region}` : "na sua região";
 
 export const faqs: Faq[] = [
   {

@@ -20,12 +20,12 @@ export function CTA() {
 
       <Container className="relative">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-medium leading-[1.15] text-balance text-white sm:text-4xl">
-            Sua piscina precisa de manutenção?
+          <h2 className="font-display text-3xl font-normal leading-[1.15] text-balance text-white sm:text-4xl">
+            Vamos cuidar da sua piscina?
           </h2>
           <p className="mt-4 text-base leading-relaxed text-white/80 sm:text-lg">
-            Fale com a Med&apos;s Piscinas e descubra a melhor solução para o
-            seu caso.
+            Fale direto com o Arquimedes e receba a melhor solução para a sua
+            piscina.
           </p>
           <Button
             href={waServiceLink("orcamento")}

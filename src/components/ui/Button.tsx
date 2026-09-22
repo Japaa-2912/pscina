@@ -27,7 +27,7 @@ const variants: Record<Variant, string> = {
 };
 
 export function Button({ variant = "primary", className = "", children, ...rest }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold sm:text-base transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold sm:text-base transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${variants[variant]} ${className}`;
 
   if ("href" in rest) {
     const anchorProps = rest as AnchorHTMLAttributes<HTMLAnchorElement>;

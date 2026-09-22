@@ -9,7 +9,7 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <Section id="faq" className="bg-white">
+    <Section id="faq" className="bg-cream">
       <SectionHeading
         eyebrow="Dúvidas frequentes"
         title="Perguntas que recebemos com frequência"

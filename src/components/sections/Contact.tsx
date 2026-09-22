@@ -61,12 +61,12 @@ export function Contact() {
   ];
 
   return (
-    <section id="contato" className="bg-cream py-16 sm:py-24">
+    <section id="contato" className="bg-cream py-20 sm:py-28 lg:py-32">
       <Container>
         <SectionHeading
           eyebrow="Contato"
           title="Peça seu orçamento"
-          description="Conte o que sua piscina precisa e fale diretamente com a Med's Piscinas."
+          description="Conte o que sua piscina precisa e fale direto com o Arquimedes."
         />
 
         <div className="mt-12 grid gap-10 sm:mt-14 lg:grid-cols-5 lg:gap-14">
@@ -205,9 +205,9 @@ export function Contact() {
                   Resposta rápida pelo WhatsApp
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">
-                  O atendimento é direto com a Med&apos;s Piscinas — sem
-                  robôs, sem espera. Conte o que você precisa e receba a melhor
-                  solução para a sua piscina.
+                  O atendimento é direto com o Arquimedes — sem robôs, sem
+                  espera. Conte o que você precisa e receba a melhor solução
+                  para a sua piscina.
                 </p>
               </div>
             </div>

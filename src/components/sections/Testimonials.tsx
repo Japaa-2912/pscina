@@ -8,14 +8,14 @@ import { InstagramIcon } from "../ui/icons";
 export function Testimonials() {
   if (!testimonialsAvailable) {
     return (
-      <Section id="depoimentos" className="bg-cream">
+      <Section id="depoimentos" className="bg-white">
         <SectionHeading
           eyebrow="Depoimentos"
           title="Quem conhece, recomenda"
         />
         <Reveal className="mx-auto mt-10 max-w-2xl">
           <div className="rounded-3xl border border-dashed border-deep/20 bg-white px-6 py-10 text-center">
-            <p className="font-display text-lg font-medium text-deep">
+            <p className="font-display text-lg font-normal text-deep">
               Em breve, depoimentos reais de clientes
             </p>
             <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted">
@@ -39,7 +39,7 @@ export function Testimonials() {
   }
 
   return (
-    <Section id="depoimentos" className="bg-cream">
+    <Section id="depoimentos" className="bg-white">
       <SectionHeading
         eyebrow="Depoimentos"
         title="Quem conhece, recomenda"

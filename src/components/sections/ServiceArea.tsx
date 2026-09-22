@@ -40,8 +40,8 @@ export function ServiceArea() {
   };
 
   return (
-    <Section id="atendimento" className="bg-white">
-      <div className="overflow-hidden rounded-3xl bg-deep shadow-[0_24px_60px_rgba(10,52,60,0.25)]">
+    <Section id="atendimento" className="bg-cream">
+      <div className="overflow-hidden rounded-3xl bg-deep shadow-lg">
         <div className="grid lg:grid-cols-2">
           <div className="p-8 sm:p-12">
             <SectionHeading
@@ -49,7 +49,7 @@ export function ServiceArea() {
               light
               eyebrow="Área de Atendimento"
               title="Atendimento na sua região"
-              description="Precisa de um profissional para cuidar da sua piscina? Consulte nossa área de atendimento."
+              description="Atendemos condomínios e residências na Zona Sul e na Zona Oeste de São Paulo. Consulte o seu bairro."
             />
 
             <div className="mt-8">
@@ -68,7 +68,7 @@ export function ServiceArea() {
                   onKeyDown={(event) => {
                     if (event.key === "Enter") checkArea();
                   }}
-                  placeholder="Digite sua cidade ou região"
+                  placeholder="Digite seu bairro ou região"
                   autoComplete="off"
                   className="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3.5 text-white placeholder:text-white/50 backdrop-blur-sm focus:border-sand-deep focus:outline-none"
                 />
@@ -121,7 +121,7 @@ export function ServiceArea() {
             </a>
           </div>
 
-          <div className="relative flex min-h-[280px] items-center justify-center bg-gradient-to-br from-water/25 via-deep to-deep p-8 lg:min-h-0">
+          <div className="relative flex min-h-[280px] items-center justify-center bg-deep p-8 lg:min-h-0">
             <div className="text-center">
               <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sand-deep/20 text-sand-light">
                 <MapPinIcon className="h-8 w-8" />

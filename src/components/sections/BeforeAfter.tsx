@@ -11,12 +11,11 @@ export function BeforeAfter() {
   if (beforeAfter.length === 0) return null;
 
   return (
-    <Section id="antes-depois" className="bg-deep">
+    <Section id="antes-depois" className="bg-cream">
       <SectionHeading
-        light
         eyebrow="Antes e depois"
         title="Veja a diferença"
-        description="Arraste o controle sobre a imagem para comparar. As fotos exibidas são ilustrativas e serão substituídas pelos trabalhos reais da empresa."
+        description="Arraste o controle sobre a imagem para comparar o antes e o depois de uma piscina recuperada."
       />
 
       <div className="mt-12 grid gap-10 sm:mt-14 lg:grid-cols-2">
@@ -24,15 +23,8 @@ export function BeforeAfter() {
           <Reveal key={pair.id} delay={index * 100}>
             <figure>
               <BeforeAfterSlider pair={pair} />
-              <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-3">
-                <p className="font-display text-lg font-medium text-white">
-                  {pair.title}
-                </p>
-                {pair.note && (
-                  <span className="rounded-full border border-sand-deep/40 px-3 py-1 text-[11px] font-medium tracking-wide text-sand-light">
-                    FOTO ILUSTRATIVA
-                  </span>
-                )}
+              <figcaption className="mt-4">
+                <p className="font-display text-lg text-deep">{pair.title}</p>
               </figcaption>
             </figure>
           </Reveal>
@@ -40,7 +32,7 @@ export function BeforeAfter() {
       </div>
 
       <Reveal className="mt-12 text-center">
-        <p className="text-base text-white/70">
+        <p className="text-base text-muted">
           Quer ver esse resultado na sua piscina?
         </p>
         <Button

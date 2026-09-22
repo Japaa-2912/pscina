@@ -16,7 +16,8 @@ export const site = {
   businessName: "Med's Piscinas",
 
   /** Frase curta usada em meta tags e rodapé */
-  tagline: "Limpeza, manutenção e tratamento profissional de piscinas",
+  tagline:
+    "Cuidado profissional de piscinas com Arquimedes, na Zona Sul e Zona Oeste de São Paulo",
 
   /**
    * URL pública do site.
@@ -45,28 +46,28 @@ export const site = {
    *  atendidas. Isso alimenta o SEO local, o Schema.org e a seção
    *  "Área de Atendimento" do site.
    * ====================================================================== */
-  city: "Barueri",
-  region: "Oeste da Grande São Paulo",
+  city: "São Paulo",
+  region: "Zona Sul e Zona Oeste de São Paulo",
   state: "SP",
   street: "", // TROQUE_AQUI: endereço (ex: "Av. Exemplo, 123")
-  zip: "06400-000", // CEP de Barueri (TROQUE_AQUI se tiver CEP específico)
+  zip: "", // TROQUE_AQUI: CEP
 
-  /** Lista de cidades/regiões atendidas (usada no campo "Ver atendimento"). */
+  /** Lista de bairros/regiões atendidas (usada no campo "Ver atendimento"). */
   serviceAreas: [
-    "Barueri",
-    "Alphaville",
-    "Tamboré",
-    "Santana de Parnaíba",
-    "Carapicuíba",
-    "Osasco",
-    "Cotia",
-    "Jandira",
+    "Campo Grande",
+    "Moema",
+    "Interlagos",
+    "Vila Mariana",
+    "Pinheiros",
+    "Perdizes",
+    "Zona Sul de São Paulo",
+    "Zona Oeste de São Paulo",
   ] as string[],
 
   /** Coordenadas aproximadas da região (usadas no Schema.org -> GeoCircle). */
   geo: {
-    latitude: -23.5067, // Barueri
-    longitude: -46.8774,
+    latitude: -23.5505, // São Paulo
+    longitude: -46.6333,
   },
   /** Raio de atendimento em metros (padrão ~20 km). */
   geoRadius: 20000,

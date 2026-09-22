@@ -12,10 +12,10 @@ import {
 
 const navLinks = [
   { href: "#inicio", label: "Início" },
-  { href: "#sobre", label: "Sobre" },
+  { href: "#sobre", label: "Quem somos" },
   { href: "#servicos", label: "Serviços" },
+  { href: "#antes-depois", label: "Antes e depois" },
   { href: "#galeria", label: "Galeria" },
-  { href: "#atendimento", label: "Área de Atendimento" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -49,7 +49,7 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
         scrolled || open
-          ? "border-b border-deep/10 shadow-[0_1px_24px_rgba(10,52,60,0.08)]"
+          ? "border-b border-deep/10 shadow-sm"
           : "border-b border-transparent"
       }`}
     >
@@ -68,7 +68,7 @@ export function Header() {
               href={site.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-1.5 font-medium text-white/80 transition-colors hover:text-white md:inline-flex"
+              className="hidden items-center gap-1.5 font-normal text-white/80 transition-colors hover:text-white md:inline-flex"
             >
               <InstagramIcon className="h-3.5 w-3.5" />
               {site.instagramHandle}
@@ -103,7 +103,7 @@ export function Header() {
             <span className="font-display text-lg font-semibold tracking-tight text-deep sm:text-xl">
               Med&apos;s Piscinas
             </span>
-            <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.18em] text-muted sm:text-[11px]">
+            <span className="mt-1 text-[10px] font-normal uppercase tracking-[0.18em] text-muted sm:text-[11px]">
               Limpeza · Manutenção · Tratamento
             </span>
           </span>
@@ -117,7 +117,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink/75 transition-colors hover:text-deep"
+              className="text-sm font-normal text-ink/75 transition-colors hover:text-deep"
             >
               {link.label}
             </a>
@@ -169,7 +169,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="border-b border-deep/10 py-4 font-display text-2xl font-medium text-deep transition-colors hover:text-water-deep"
+              className="border-b border-deep/10 py-4 font-display text-2xl font-normal text-deep transition-colors hover:text-water-deep"
             >
               {link.label}
             </a>

@@ -5,44 +5,55 @@
 
 /* =====================================================================
    TEMA — Med's Piscinas
-   Água cristalina + Areia + Sol + Limpeza + Profissionalismo
+   Paleta enxuta: 1 primária (azul água suave) + 1 neutro escuro +
+   1 cinza claro + branco. Sem gradientes decorativos nem dourado.
    ===================================================================== */
 @theme {
-  /* Azul profundo / petróleo */
-  --color-deep: #0a343c;
-  --color-deep-800: #0f4550;
-  --color-deep-700: #145664;
+  /* Primária — azul água suave e dessaturado */
+  --color-water: #5b96a6;
+  --color-water-deep: #3d7280;
+  --color-water-light: #cfe3e8;
+  --color-water-50: #f2f7f8;
 
-  /* Azul água cristalina */
-  --color-water: #3fa8bc;
-  --color-water-deep: #1e7e93;
-  --color-water-light: #8fd0db;
-  --color-water-50: #e7f6f9;
+  /* Neutro escuro — texto e fundos escuros */
+  --color-deep: #1f2a2e;
+  --color-deep-800: #2b383d;
 
-  /* Tons de areia (areia de praia, não dourado) */
-  --color-sand: #e6d9c0;
-  --color-sand-light: #f0e8d6;
-  --color-sand-deep: #c2ae8a;
-  --color-sand-dark: #a89370;
+  /* Texto de apoio */
+  --color-ink: #232f33;
+  --color-muted: #66757a;
 
-  /* Bege quente */
-  --color-cream: #f8f4ea;
-  --color-cream-dark: #efe8d8;
+  /* Cinza claro — fundos alternados */
+  --color-cream: #f5f6f7;
+  --color-cream-dark: #eceef0;
 
-  /* Detalhe dourado mínimo (sol da marca) — usado com moderação */
-  --color-gold: #b98a2f;
+  /* Aliases legados remapeados para a paleta enxuta (azul/cinza) */
+  --color-sand: #cfe3e8;
+  --color-sand-light: #dcebf0;
+  --color-sand-deep: #3d7280;
+  --color-sand-dark: #325e6a;
 
-  /* Texto e apoio */
-  --color-ink: #16272b;
-  --color-muted: #5d7177;
-
-  /* Verde WhatsApp (tons mais escuros para contraste AA) */
-  --color-wa: #1c8a4d;
-  --color-wa-dark: #15693b;
+  /* Verde WhatsApp — cor funcional (CTA de contato) */
+  --color-wa: #1f8a4c;
+  --color-wa-dark: #176b3b;
 
   /* Tipografia */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+
+  /* Raios suavizados (menos "bolha") */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.625rem;
+  --radius-2xl: 0.75rem;
+  --radius-3xl: 0.875rem;
+
+  /* Sombras suavizadas e mais leves */
+  --shadow-xs: 0 1px 2px 0 rgb(16 24 27 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(16 24 27 / 0.05), 0 1px 2px -1px rgb(16 24 27 / 0.04);
+  --shadow-md: 0 4px 10px -2px rgb(16 24 27 / 0.06);
+  --shadow-lg: 0 8px 20px -6px rgb(16 24 27 / 0.08);
+  --shadow-xl: 0 12px 28px -10px rgb(16 24 27 / 0.10);
+  --shadow-2xl: 0 16px 36px -14px rgb(16 24 27 / 0.12);
 }
 
 @layer base {
