@@ -18,7 +18,11 @@ export function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
 
   const handlePointerDown = (event: ReactPointerEvent) => {
     dragging.current = true;
-    event.currentTarget.setPointerCapture(event.pointerId);
+    try {
+      event.currentTarget.setPointerCapture(event.pointerId);
+    } catch {
+      /* alguns navegadores não permitem captura — segue sem ela */
+    }
     updateFromClientX(event.clientX);
   };
 
@@ -44,11 +48,11 @@ export function BeforeAfterSlider({ pair }: { pair: BeforeAfterPair }) {
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[4/3] w-full select-none overflow-hidden rounded-2xl shadow-lg"
+      className="relative aspect-[4/3] w-full touch-none select-none overflow-hidden rounded-2xl shadow-lg cursor-ew-resize"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={stopDragging}
-      onPointerLeave={stopDragging}
+      onPointerCancel={stopDragging}
       onKeyDown={handleKeyDown}
       role="slider"
       aria-label={`Comparativo antes e depois: ${pair.title}`}

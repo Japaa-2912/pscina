@@ -40,7 +40,7 @@ export function Hero() {
                 <WhatsAppIcon className="h-5 w-5" />
                 Falar pelo WhatsApp
               </Button>
-              <Button href="#servicos" variant="outline" className="py-4 sm:px-8">
+              <Button to="/servicos" variant="outline" className="py-4 sm:px-8">
                 Ver serviços
               </Button>
             </div>

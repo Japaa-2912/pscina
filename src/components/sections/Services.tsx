@@ -9,7 +9,6 @@ export function Services() {
   return (
     <Section id="servicos" className="bg-white">
       <SectionHeading
-        eyebrow="Serviços"
         title="O que fazemos pela sua piscina"
         description="Do tratamento da água à manutenção do dia a dia — uma lista direta do que cuidamos para você."
       />

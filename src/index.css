@@ -104,6 +104,24 @@
   transform: none;
 }
 
+/* ---------------------------------------------------------------------
+   Transição suave ao trocar de página
+   --------------------------------------------------------------------- */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* Respeita usuários que preferem menos movimento */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -114,6 +132,12 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .page-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   *,

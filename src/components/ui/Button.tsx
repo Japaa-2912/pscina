@@ -1,21 +1,31 @@
-import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 type Variant = "primary" | "accent" | "whatsapp" | "outline" | "light" | "ghost";
 
 interface BaseProps {
   variant?: Variant;
   className?: string;
+  children?: ReactNode;
 }
 
 interface ButtonAsButton extends BaseProps, ButtonHTMLAttributes<HTMLButtonElement> {
   href?: undefined;
+  to?: undefined;
 }
 
 interface ButtonAsAnchor extends BaseProps, AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
+  to?: undefined;
 }
 
-export type ButtonProps = ButtonAsButton | ButtonAsAnchor;
+interface ButtonAsLink extends BaseProps {
+  /** Rota interna (react-router). */
+  to: string;
+  href?: undefined;
+}
+
+export type ButtonProps = ButtonAsButton | ButtonAsAnchor | ButtonAsLink;
 
 const variants: Record<Variant, string> = {
   primary: "bg-deep text-cream hover:bg-deep-800 shadow-sm",
@@ -27,7 +37,15 @@ const variants: Record<Variant, string> = {
 };
 
 export function Button({ variant = "primary", className = "", children, ...rest }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold sm:text-base transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold sm:text-base transition-all duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-water-deep ${variants[variant]} ${className}`;
+
+  if ("to" in rest && typeof rest.to === "string") {
+    return (
+      <Link to={rest.to} className={classes}>
+        {children}
+      </Link>
+    );
+  }
 
   if ("href" in rest) {
     const anchorProps = rest as AnchorHTMLAttributes<HTMLAnchorElement>;

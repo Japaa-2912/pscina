@@ -64,7 +64,6 @@ export function Contact() {
     <section id="contato" className="bg-cream py-20 sm:py-28 lg:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Contato"
           title="Peça seu orçamento"
           description="Conte o que sua piscina precisa e fale direto com o Arquimedes."
         />

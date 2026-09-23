@@ -11,7 +11,6 @@ export function Gallery() {
   return (
     <Section id="galeria" className="bg-white">
       <SectionHeading
-        eyebrow="Galeria"
         title="Piscinas que cuidamos"
         description="Confira alguns dos nossos trabalhos de limpeza, tratamento e manutenção."
       />

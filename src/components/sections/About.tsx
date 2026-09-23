@@ -2,15 +2,8 @@ import { site } from "../../config/site";
 import { waServiceLink } from "../../lib/whatsapp";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
-import { CheckIcon, WhatsAppIcon } from "../ui/icons";
+import { WhatsAppIcon } from "../ui/icons";
 import { Reveal } from "../ui/Reveal";
-
-const trustPoints = [
-  "Mais de 10 anos de experiência",
-  "Empresa familiar",
-  "Atendimento próximo e direto",
-  "Rede de parceiros especializados",
-];
 
 export function About() {
   return (
@@ -31,10 +24,6 @@ export function About() {
 
           {/* Texto em primeira pessoa */}
           <Reveal delay={100}>
-            <p className="mb-4 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-water-deep">
-              <span aria-hidden="true" className="h-px w-8 bg-sand-deep" />
-              Quem somos
-            </p>
             <h2 className="font-display text-3xl font-normal leading-[1.15] text-balance text-deep sm:text-4xl">
               Por trás da Med&apos;s Piscinas
             </h2>
@@ -56,18 +45,13 @@ export function About() {
                 e produtos especializados, com avaliação e acompanhamento
                 periódico da água.
               </p>
+              <p>
+                Hoje o cuidado é uma coisa de família: meu filho primogênito,
+                Igor, é meu braço direito no dia a dia, e meu enteado, Gustavo,
+                também faz parte dessa história. É essa proximidade que a gente
+                leva para a casa de cada cliente.
+              </p>
             </div>
-
-            <ul className="mt-8 grid gap-3.5 sm:grid-cols-2">
-              {trustPoints.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-sm text-ink">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sand-light text-deep">
-                    <CheckIcon className="h-3.5 w-3.5" />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
 
             <Button
               href={waServiceLink("geral")}

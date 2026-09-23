@@ -13,7 +13,6 @@ export function BeforeAfter() {
   return (
     <Section id="antes-depois" className="bg-cream">
       <SectionHeading
-        eyebrow="Antes e depois"
         title="Veja a diferença"
         description="Arraste o controle sobre a imagem para comparar o antes e o depois de uma piscina recuperada."
       />

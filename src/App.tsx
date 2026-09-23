@@ -1,46 +1,31 @@
-import { Footer } from "./components/layout/Footer";
-import { Header } from "./components/layout/Header";
-import { MobileBottomBar } from "./components/layout/MobileBottomBar";
-import { WhatsAppFloat } from "./components/layout/WhatsAppFloat";
-import { About } from "./components/sections/About";
-import { BeforeAfter } from "./components/sections/BeforeAfter";
-import { Contact } from "./components/sections/Contact";
-import { CTA } from "./components/sections/CTA";
-import { Faq } from "./components/sections/Faq";
-import { Gallery } from "./components/sections/Gallery";
-import { Hero } from "./components/sections/Hero";
-import { ServiceArea } from "./components/sections/ServiceArea";
-import { Services } from "./components/sections/Services";
-import { Testimonials } from "./components/sections/Testimonials";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RootLayout } from "./components/layout/RootLayout";
+import { AntesEDepois } from "./pages/AntesEDepois";
+import { Contato } from "./pages/Contato";
+import { Galeria } from "./pages/Galeria";
+import { Home } from "./pages/Home";
+import { Informacoes } from "./pages/Informacoes";
+import { NotFound } from "./pages/NotFound";
+import { QuemSomos } from "./pages/QuemSomos";
+import { Servicos } from "./pages/Servicos";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "quem-somos", element: <QuemSomos /> },
+      { path: "servicos", element: <Servicos /> },
+      { path: "antes-e-depois", element: <AntesEDepois /> },
+      { path: "galeria", element: <Galeria /> },
+      { path: "informacoes", element: <Informacoes /> },
+      { path: "contato", element: <Contato /> },
+      { path: "*", element: <NotFound /> },
+    ],
+  },
+]);
 
 export default function App() {
-  return (
-    <>
-      <a
-        href="#conteudo"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-lg focus:bg-deep focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-cream"
-      >
-        Pular para o conteúdo
-      </a>
-
-      <Header />
-
-      <main id="conteudo">
-        <Hero />
-        <About />
-        <Services />
-        <BeforeAfter />
-        <Gallery />
-        <ServiceArea />
-        <Testimonials />
-        <Faq />
-        <CTA />
-        <Contact />
-      </main>
-
-      <Footer />
-      <WhatsAppFloat />
-      <MobileBottomBar />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }

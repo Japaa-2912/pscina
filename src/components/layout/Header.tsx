@@ -1,22 +1,18 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { site } from "../../config/site";
 import { waServiceLink } from "../../lib/whatsapp";
 import { Button } from "../ui/Button";
-import {
-  ClockIcon,
-  CloseIcon,
-  InstagramIcon,
-  MenuIcon,
-  WhatsAppIcon,
-} from "../ui/icons";
+import { CloseIcon, InstagramIcon, MenuIcon, WhatsAppIcon } from "../ui/icons";
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#sobre", label: "Quem somos" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#antes-depois", label: "Antes e depois" },
-  { href: "#galeria", label: "Galeria" },
-  { href: "#contato", label: "Contato" },
+  { to: "/", label: "Início" },
+  { to: "/quem-somos", label: "Quem somos" },
+  { to: "/servicos", label: "Serviços" },
+  { to: "/antes-e-depois", label: "Antes e depois" },
+  { to: "/galeria", label: "Galeria" },
+  { to: "/informacoes", label: "Informações" },
+  { to: "/contato", label: "Contato" },
 ];
 
 export function Header() {
@@ -47,37 +43,15 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
+      className={`relative bg-white transition-shadow duration-300 ${
         scrolled || open
           ? "border-b border-deep/10 shadow-sm"
           : "border-b border-transparent"
       }`}
     >
-      {/* Barra de informações no topo — apenas horário e Instagram */}
-      <div className="bg-deep text-white/80">
-        <div className="mx-auto flex h-10 w-full max-w-6xl items-center justify-between gap-4 overflow-hidden px-5 text-xs sm:px-8">
-          <p className="flex min-w-0 items-center gap-2">
-            <ClockIcon className="h-3.5 w-3.5 shrink-0 text-sand-light" />
-            <span className="hidden truncate sm:inline">
-              {site.openingHours || "Horário de atendimento em breve"}
-            </span>
-            <span className="truncate sm:hidden">Atendimento por WhatsApp</span>
-          </p>
-          <a
-            href={site.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-1.5 font-normal text-white/80 transition-colors hover:text-white"
-          >
-            <InstagramIcon className="h-3.5 w-3.5" />
-            <span className="hidden sm:inline">{site.instagramHandle}</span>
-          </a>
-        </div>
-      </div>
-
       <div className="mx-auto flex min-h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 py-2 sm:min-h-20 sm:px-8">
-        <a
-          href="#inicio"
+        <Link
+          to="/"
           className="flex min-w-0 items-center gap-3"
           aria-label={`${site.businessName} — início`}
         >
@@ -96,20 +70,27 @@ export function Header() {
               Limpeza · Manutenção · Tratamento
             </span>
           </span>
-        </a>
+        </Link>
 
         <nav
           aria-label="Navegação principal"
           className="hidden flex-1 items-center justify-center gap-7 xl:flex"
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="whitespace-nowrap text-sm font-normal text-ink/75 transition-colors hover:text-deep"
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === "/"}
+              className={({ isActive }) =>
+                `relative whitespace-nowrap text-sm transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:bg-current after:transition-all after:duration-200 ${
+                  isActive
+                    ? "font-semibold text-deep after:w-full"
+                    : "font-normal text-ink/75 after:w-0 hover:text-deep hover:after:w-full"
+                }`
+              }
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -119,7 +100,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Falar com a Med's Piscinas pelo WhatsApp"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-wa text-white shadow-sm transition-colors hover:bg-wa-dark xl:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-wa text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-wa-dark focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-95 xl:hidden"
           >
             <WhatsAppIcon className="h-5 w-5" />
           </a>
@@ -138,7 +119,7 @@ export function Header() {
             aria-expanded={open}
             aria-controls="menu-mobile"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-deep transition-colors hover:bg-deep/5 xl:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-deep transition-colors hover:bg-deep/5 focus-visible:outline-2 focus-visible:outline-offset-2 xl:hidden"
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -154,14 +135,21 @@ export function Header() {
       >
         <nav aria-label="Navegação mobile" className="flex flex-col">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === "/"}
               onClick={() => setOpen(false)}
-              className="border-b border-deep/10 py-4 font-display text-2xl font-normal text-deep transition-colors hover:text-water-deep"
+              className={({ isActive }) =>
+                `border-b border-deep/10 py-4 font-display text-2xl transition-colors ${
+                  isActive
+                    ? "font-semibold text-deep"
+                    : "font-normal text-deep/80 hover:text-water-deep"
+                }`
+              }
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -178,7 +166,7 @@ export function Header() {
             href={site.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-deep/20 px-6 py-3.5 text-base font-semibold text-deep transition-colors hover:bg-deep/5"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-deep/20 px-6 py-3.5 text-base font-semibold text-deep transition-colors hover:bg-deep/5 focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             <InstagramIcon className="h-5 w-5" />
             Seguir no Instagram

@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 import { site } from "../../config/site";
 import { waServiceLink } from "../../lib/whatsapp";
 import { ClockIcon, InstagramIcon, MapPinIcon, WhatsAppIcon } from "../ui/icons";
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#sobre", label: "Quem somos" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#antes-depois", label: "Antes e depois" },
-  { href: "#galeria", label: "Galeria" },
-  { href: "#depoimentos", label: "Depoimentos" },
-  { href: "#contato", label: "Contato" },
+  { to: "/", label: "Início" },
+  { to: "/quem-somos", label: "Quem somos" },
+  { to: "/servicos", label: "Serviços" },
+  { to: "/antes-e-depois", label: "Antes e depois" },
+  { to: "/galeria", label: "Galeria" },
+  { to: "/informacoes", label: "Informações" },
+  { to: "/contato", label: "Contato" },
 ];
 
 export function Footer() {
@@ -55,13 +56,13 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-2.5">
               {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm transition-colors hover:text-white"
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-sm transition-colors hover:text-white hover:underline underline-offset-4"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

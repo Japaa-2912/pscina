@@ -27,13 +27,18 @@ export function CTA() {
             Fale direto com o Arquimedes e receba a melhor solução para a sua
             piscina.
           </p>
-          <Button
-            href={waServiceLink("orcamento")}
-            variant="accent"
-            className="mt-8 px-9 py-4 text-base"
-          >
-            Solicitar orçamento
-          </Button>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button
+              href={waServiceLink("orcamento")}
+              variant="accent"
+              className="px-9 py-4 text-base"
+            >
+              Solicitar orçamento
+            </Button>
+            <Button to="/contato" variant="light" className="px-9 py-4 text-base">
+              Contato
+            </Button>
+          </div>
         </Reveal>
       </Container>
     </section>
