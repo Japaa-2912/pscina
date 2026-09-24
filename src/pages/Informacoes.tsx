@@ -17,7 +17,7 @@ import { waServiceLink } from "../lib/whatsapp";
 import { usePageMeta } from "../lib/usePageMeta";
 
 const cardClass =
-  "group flex h-full w-full flex-col rounded-2xl border border-deep/10 bg-white p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-deep/20 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2";
+  "group flex h-full w-full flex-col rounded-2xl border border-deep/10 bg-cream p-6 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-deep/20 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2";
 
 export function Informacoes() {
   usePageMeta({
@@ -44,7 +44,7 @@ export function Informacoes() {
       <section className="bg-white py-20 sm:py-28 lg:py-32">
         <Container>
           {/* Informações rápidas */}
-          <div className="mx-auto grid max-w-4xl gap-3 sm:grid-cols-3">
+          <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="flex items-start gap-3 rounded-2xl border border-deep/10 bg-cream p-5">
               <ClockIcon className="mt-0.5 h-5 w-5 shrink-0 text-water-deep" />
               <div>
@@ -87,7 +87,7 @@ export function Informacoes() {
                 onClick={() => setFaqOpen(true)}
                 className={cardClass}
               >
-                <h3 className="font-display text-xl text-deep">
+                <h3 className="font-display text-xl text-deep sm:min-h-14">
                   Dúvidas frequentes
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
@@ -106,7 +106,7 @@ export function Informacoes() {
                   onClick={() => setTopic(index)}
                   className={cardClass}
                 >
-                  <h3 className="font-display text-xl text-deep">
+                  <h3 className="font-display text-xl text-deep sm:min-h-14">
                     {item.title}
                   </h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">

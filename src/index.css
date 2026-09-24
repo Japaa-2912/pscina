@@ -66,6 +66,11 @@
     text-rendering: optimizeLegibility;
   }
 
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
   section[id] {
     scroll-margin-top: 7.5rem;
   }

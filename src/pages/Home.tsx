@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CTA } from "../components/sections/CTA";
 import { Hero } from "../components/sections/Hero";
 import { Testimonials } from "../components/sections/Testimonials";
@@ -39,14 +40,20 @@ export function Home() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal key={service.id} delay={index * 40}>
-              <div className="h-full rounded-2xl border border-deep/10 bg-white p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-deep/20 hover:shadow-md">
+              <Link
+                to="/servicos"
+                className="flex h-full flex-col rounded-2xl border border-deep/10 bg-cream p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-deep/20 hover:shadow-md"
+              >
                 <h3 className="font-display text-lg text-deep">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-4 text-sm font-semibold text-water-deep">
+                  Ver detalhes →
+                </span>
+              </Link>
             </Reveal>
           ))}
         </div>

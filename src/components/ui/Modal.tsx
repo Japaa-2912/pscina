@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { CloseIcon } from "./icons";
 
 interface ModalProps {
@@ -28,9 +29,9 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
 
   if (!open) return null;
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-[70] flex items-end justify-center sm:items-center sm:p-6"
+      className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-label={title}
@@ -42,7 +43,7 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
         className="absolute inset-0 cursor-default bg-deep/60 backdrop-blur-sm"
       />
 
-      <div className="relative flex max-h-[90vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl">
+      <div className="relative flex max-h-[90vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl bg-white pb-[env(safe-area-inset-bottom)] shadow-2xl sm:rounded-3xl sm:pb-0">
         <div className="flex items-start justify-between gap-4 border-b border-deep/10 px-6 py-5">
           <div>
             {eyebrow && (
@@ -65,6 +66,7 @@ export function Modal({ open, onClose, title, eyebrow, children }: ModalProps) {
 
         <div className="overflow-y-auto px-6 py-6">{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
