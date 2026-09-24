@@ -13,6 +13,7 @@ export function Contato() {
   return (
     <>
       <PageHeader
+        current="Contato"
         eyebrow="Fale com a gente"
         title="Contato"
         description="Tire suas dúvidas e solicite seu orçamento pelo WhatsApp. O atendimento é direto com o Arquimedes."

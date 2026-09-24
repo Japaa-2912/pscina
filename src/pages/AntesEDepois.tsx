@@ -12,6 +12,7 @@ export function AntesEDepois() {
   return (
     <>
       <PageHeader
+        current="Antes e Depois"
         eyebrow="Resultados"
         title="Antes e Depois"
         description="Arraste os controles sobre as imagens e veja a diferença que o cuidado profissional faz na sua piscina."

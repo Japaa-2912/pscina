@@ -13,6 +13,7 @@ export function QuemSomos() {
   return (
     <>
       <PageHeader
+        current="Quem Somos"
         eyebrow="A Med's Piscinas"
         title="Quem Somos"
         description="Uma empresa familiar, com mais de 10 anos de experiência no cuidado de piscinas na Zona Sul e na Zona Oeste de São Paulo."

@@ -85,11 +85,12 @@ export const site = {
   images: {
     /** Logo/marca. Foto real da empresa em /public/images/logo/logo.jpg */
     logo: "/images/logo/logo.jpg",
-    /** Foto do hero (primeira dobra). Foto de piscina (Pexels, licença livre). */
-    hero: "/images/hero/hero-piscina.jpg",
-    /** Foto do profissional trabalhando (seção Sobre). Fotos reais da empresa. */
-    profissional: "/images/profissional/profissional-1.jpg",
-    profissionalAlt: "/images/profissional/profissional-2.jpg",
+    /** Foto do hero (primeira dobra). Profissional em pé com a peneira. */
+    hero: "/images/hero/hero-profissional.jpg",
+    /** Foto da equipe na garagem (seção Quem Somos). */
+    equipeGaragem: "/images/equipe/equipe-garagem.jpg",
+    /** Foto da equipe na piscina (menor, seção Quem Somos). */
+    equipePiscina: "/images/equipe/equipe-piscina.jpg",
     /** Foto de fundo do CTA intermediário. Foto de piscina (Pexels, licença livre). */
     cta: "/images/cta/cta-piscina.jpg",
     /** Imagem de compartilhamento (Open Graph). 1200x630, gerada com a logo real. */

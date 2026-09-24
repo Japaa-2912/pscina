@@ -12,6 +12,7 @@ export function Galeria() {
   return (
     <>
       <PageHeader
+        current="Galeria"
         eyebrow="Nosso trabalho"
         title="Galeria"
         description="Alguns dos trabalhos de limpeza, tratamento e manutenção que realizamos."

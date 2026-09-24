@@ -1,16 +1,28 @@
-import { CheckIcon } from "../ui/icons";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
+import { CheckIcon } from "../ui/icons";
 
-/**
- * "Nossos valores" — reutiliza os pontos de confiança que antes ficavam no About
- * (mesmo texto, apenas movido para cá).
- */
 const valores = [
-  "Mais de 10 anos de experiência",
-  "Empresa familiar",
-  "Atendimento próximo e direto",
-  "Rede de parceiros especializados",
+  {
+    title: "Responsabilidade",
+    description: "Cada piscina é tratada com seriedade e compromisso.",
+  },
+  {
+    title: "Profissionalismo",
+    description: "Serviço feito por quem entende, com atenção aos detalhes.",
+  },
+  {
+    title: "Água sempre cristalina",
+    description: "Cuidado com o tratamento e o equilíbrio da água.",
+  },
+  {
+    title: "Venda de produtos",
+    description: "Produtos especializados para tratamento e manutenção.",
+  },
+  {
+    title: "Parceria para consertos",
+    description: "Rede de confiança para consertos de bombas.",
+  },
 ];
 
 export function Valores() {
@@ -28,16 +40,25 @@ export function Valores() {
           </h2>
         </Reveal>
 
-        <ul className="mx-auto mt-12 grid max-w-3xl gap-3.5 sm:grid-cols-2">
-          {valores.map((item) => (
-            <li key={item} className="flex items-center gap-3 text-sm text-ink">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sand-light text-deep">
-                <CheckIcon className="h-3.5 w-3.5" />
-              </span>
-              {item}
-            </li>
+        <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-2">
+          {valores.map((item, index) => (
+            <Reveal key={item.title} delay={index * 50}>
+              <div className="flex h-full items-start gap-3 rounded-2xl border border-deep/10 bg-cream p-5">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sand-light text-deep">
+                  <CheckIcon className="h-4 w-4" />
+                </span>
+                <div>
+                  <h3 className="font-display text-lg text-deep">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
           ))}
-        </ul>
+        </div>
       </Container>
     </section>
   );

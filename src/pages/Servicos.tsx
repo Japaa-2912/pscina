@@ -12,6 +12,7 @@ export function Servicos() {
   return (
     <>
       <PageHeader
+        current="Serviços"
         eyebrow="O que fazemos"
         title="Serviços"
         description="Do tratamento da água à manutenção do dia a dia — tudo o que cuidamos para manter a sua piscina sempre pronta para aproveitar."

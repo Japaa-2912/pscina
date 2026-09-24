@@ -10,12 +10,12 @@ export function About() {
     <section id="sobre" className="bg-cream py-20 sm:py-28 lg:py-32">
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          {/* Foto do Arquimedes */}
+          {/* Foto principal da equipe */}
           <Reveal className="relative mx-auto w-full max-w-md lg:max-w-none">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-sm">
               <img
-                src={site.images.profissionalAlt}
-                alt="Arquimedes, à frente da Med's Piscinas, durante um atendimento"
+                src={site.images.equipeGaragem}
+                alt="Equipe da Med's Piscinas na garagem, ao lado da van"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
@@ -53,10 +53,18 @@ export function About() {
               </p>
             </div>
 
+            {/* Foto da equipe na piscina (menor) */}
+            <img
+              src={site.images.equipePiscina}
+              alt="Arquimedes, Igor e Gustavo, equipe da Med's Piscinas, junto à piscina"
+              loading="lazy"
+              className="mt-8 w-40 rounded-2xl object-cover shadow-sm sm:w-48"
+            />
+
             <Button
               href={waServiceLink("geral")}
               variant="whatsapp"
-              className="mt-9"
+              className="mt-9 flex w-fit"
             >
               <WhatsAppIcon className="h-4 w-4" />
               Falar com o Arquimedes

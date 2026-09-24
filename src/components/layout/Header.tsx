@@ -105,13 +105,11 @@ export function Header() {
             <WhatsAppIcon className="h-5 w-5" />
           </a>
 
-          <Button
-            href={waServiceLink("orcamento")}
-            variant="primary"
-            className="hidden xl:inline-flex"
-          >
-            Solicitar orçamento
-          </Button>
+          <div className="hidden xl:block">
+            <Button href={waServiceLink("orcamento")} variant="primary">
+              Solicitar orçamento
+            </Button>
+          </div>
 
           <button
             type="button"

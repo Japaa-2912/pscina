@@ -7,7 +7,7 @@ import { Reveal } from "../ui/Reveal";
 
 const trustItems = [
   "Mais de 10 anos de experiência",
-  "Atendimento direto com o Arquimedes",
+  "Atendimento próximo e direto",
   "Zona Sul e Zona Oeste de São Paulo",
 ];
 
@@ -17,18 +17,13 @@ export function Hero() {
       <Container>
         <div className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
           <Reveal>
-            <p className="inline-flex items-center gap-2 rounded-full border border-deep/10 bg-cream px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-water-deep">
-              Arquimedes · Med&apos;s Piscinas
-            </p>
-
-            <h1 className="mt-6 font-display text-4xl font-normal leading-[1.1] text-balance text-deep sm:text-5xl lg:text-[3.25rem]">
-              Sua piscina cuidada de perto, com quem você confia.
+            <h1 className="font-display text-4xl font-normal leading-[1.1] text-balance text-deep sm:text-5xl lg:text-[3.25rem]">
+              Med&apos;s Piscinas
             </h1>
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-              Sou o Arquimedes. Há mais de 10 anos cuido de piscinas na Zona Sul
-              e na Zona Oeste de São Paulo — com água sempre cristalina e o
-              cuidado de quem faz isso de verdade.
+              Comandada por Arquimedes, profissional com mais de 10 anos de
+              experiência em tratamento de águas e manutenção.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -66,8 +61,8 @@ export function Hero() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-sm">
               <img
-                src={site.images.profissional}
-                alt="Arquimedes, responsável pela Med's Piscinas, durante um atendimento"
+                src={site.images.hero}
+                alt="Profissional da Med's Piscinas cuidando da piscina com a peneira"
                 className="h-full w-full object-cover"
                 loading="eager"
                 fetchPriority="high"
