@@ -49,7 +49,7 @@ export function ServiceArea() {
               light
               eyebrow="Área de Atendimento"
               title="Atendimento na sua região"
-              description="Atendemos condomínios e residências na Zona Sul e na Zona Oeste de São Paulo. Consulte o seu bairro."
+              description="Atendemos condomínios e residências na Zona Sul e na Zona Oeste de São Paulo, além de Alphaville e Aldeia da Serra. Consulte o seu bairro."
             />
 
             <div className="mt-8">

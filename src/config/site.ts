@@ -47,7 +47,7 @@ export const site = {
    *  "Área de Atendimento" do site.
    * ====================================================================== */
   city: "São Paulo",
-  region: "Zona Sul e Zona Oeste de São Paulo",
+  region: "Zona Sul e Zona Oeste de São Paulo, Alphaville e Aldeia da Serra",
   state: "SP",
   street: "", // TROQUE_AQUI: endereço (ex: "Av. Exemplo, 123")
   zip: "", // TROQUE_AQUI: CEP
@@ -60,6 +60,8 @@ export const site = {
     "Vila Mariana",
     "Pinheiros",
     "Perdizes",
+    "Alphaville",
+    "Aldeia da Serra",
     "Zona Sul de São Paulo",
     "Zona Oeste de São Paulo",
   ] as string[],
