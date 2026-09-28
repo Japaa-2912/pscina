@@ -25,18 +25,13 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Marca */}
           <div>
-            <div className="flex items-center gap-3">
-              <img
-                src={site.images.logo}
-                alt={`Logotipo ${site.businessName}`}
-                width={96}
-                height={96}
-                className="h-12 w-12 shrink-0 rounded-lg object-cover"
-              />
-              <p className="font-display text-xl font-semibold text-white">
-                Med&apos;s Piscinas
-              </p>
-            </div>
+            <img
+              src={site.images.logo}
+              alt={`Logotipo ${site.businessName}`}
+              width={357}
+              height={183}
+              className="h-12 w-auto rounded-xl bg-white p-2"
+            />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               Limpeza, manutenção e tratamento de piscinas com o cuidado do
               Arquimedes, na Zona Sul e Zona Oeste de São Paulo.

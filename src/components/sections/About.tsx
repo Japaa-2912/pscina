@@ -53,14 +53,6 @@ export function About() {
               </p>
             </div>
 
-            {/* Foto da equipe na piscina (menor) */}
-            <img
-              src={site.images.equipePiscina}
-              alt="Arquimedes, Igor e Gustavo, equipe da Med's Piscinas, junto à piscina"
-              loading="lazy"
-              className="mt-8 w-40 rounded-2xl object-cover shadow-sm sm:w-48"
-            />
-
             <Button
               href={waServiceLink("geral")}
               variant="whatsapp"

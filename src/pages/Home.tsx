@@ -7,6 +7,7 @@ import { Container } from "../components/ui/Container";
 import { Reveal } from "../components/ui/Reveal";
 import { Section } from "../components/ui/Section";
 import { SectionHeading } from "../components/ui/SectionHeading";
+import { site } from "../config/site";
 import { services } from "../data/services";
 import { usePageMeta } from "../lib/usePageMeta";
 
@@ -21,12 +22,18 @@ export function Home() {
     <>
       <Hero />
 
-      <section className="bg-deep py-10 text-white sm:py-12">
-        <Container>
-          <p className="mx-auto max-w-3xl text-center font-display text-xl leading-snug text-balance sm:text-2xl">
+      <section className="bg-deep text-white">
+        <Container className="flex flex-col items-center gap-6 py-12 text-center sm:flex-row sm:justify-center sm:gap-12 sm:py-14 sm:text-left">
+          <p className="max-w-xl font-display text-xl leading-snug text-balance sm:text-2xl">
             Mais de 10 anos cuidando de piscinas na Zona Sul e na Zona Oeste de
             São Paulo.
           </p>
+          <img
+            src={site.images.equipePiscina}
+            alt="Equipe da Med's Piscinas reunida ao lado da piscina"
+            loading="lazy"
+            className="w-40 shrink-0 rounded-2xl object-cover shadow-lg sm:w-48 lg:w-56"
+          />
         </Container>
       </section>
 

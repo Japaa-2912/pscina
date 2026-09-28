@@ -52,24 +52,16 @@ export function Header() {
       <div className="mx-auto flex min-h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 py-2 sm:min-h-20 sm:px-8">
         <Link
           to="/"
-          className="flex min-w-0 items-center gap-3"
+          className="flex min-w-0 items-center"
           aria-label={`${site.businessName} — início`}
         >
           <img
             src={site.images.logo}
             alt={`Logotipo ${site.businessName}`}
-            width={96}
-            height={96}
-            className="h-11 w-11 shrink-0 rounded-lg object-cover sm:h-12 sm:w-12"
+            width={357}
+            height={183}
+            className="h-9 w-auto sm:h-11"
           />
-          <span className="flex min-w-0 flex-col leading-tight">
-            <span className="truncate font-display text-base font-semibold tracking-tight text-deep sm:text-xl">
-              Med&apos;s Piscinas
-            </span>
-            <span className="mt-0.5 text-[10px] font-normal uppercase tracking-[0.12em] text-muted sm:mt-1 sm:text-[11px] sm:tracking-[0.18em]">
-              Limpeza · Manutenção · Tratamento
-            </span>
-          </span>
         </Link>
 
         <nav

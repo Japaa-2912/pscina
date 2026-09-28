@@ -83,8 +83,8 @@ export const site = {
    *  (ou no arquivo de dados correspondente).
    * ====================================================================== */
   images: {
-    /** Logo/marca. Foto real da empresa em /public/images/logo/logo.jpg */
-    logo: "/images/logo/logo.jpg",
+    /** Logo/marca (PNG com transparência) em /public/images/logo/logo.png */
+    logo: "/images/logo/logo.png",
     /** Foto do hero (primeira dobra). Profissional em pé com a peneira. */
     hero: "/images/hero/hero-profissional.jpg",
     /** Foto da equipe na garagem (seção Quem Somos). */
